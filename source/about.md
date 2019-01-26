@@ -9,7 +9,7 @@ footer: false
 
 A self-taught software engineer from computer and control systems education background.
 
-I am working as a Senior iOS Development Engineer at [Tectus Dreamlab](https://tectusdreamlab.com/) Singapore starting from 11th February 2019. It will involve application of machine learning, augmented reality (AR) in Civil Engineering, which starts at iOS which has improved a lot in this area since the introduction of ARKit and CoreML.
+I am working as a Senior iOS Development Engineer at [Tectus Dreamlab](https://tectusdreamlab.com/) Singapore starting from 11th February 2019. It will at least involve application of machine learning, and augmented reality (AR) on the iOS platform which has improved a lot in this area since the introduction of ARKit and CoreML.
 
 I maintain my online resume at [Stack Overflow Developer Story](https://stackoverflow.com/story/jessearmand). Please take a look to understand more about my professional history.
 
