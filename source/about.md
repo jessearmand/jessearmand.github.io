@@ -13,16 +13,12 @@ I am working as a Senior iOS Development Engineer at [Tectus Dreamlab](https://t
 
 I maintain my online resume at [Stack Overflow Developer Story](https://stackoverflow.com/story/jessearmand). Please take a look to understand more about my professional history.
 
-I generally believe that programming or writing code is the practice of putting down your ideas, thoughts, or formulas to the real world to be tested, used, and improved upon. This is one of the very few ways where a person could create and manipulate their surrounding environments with minimal effort compared to other types of endeavours.
+As a software engineer, I have witnessed a few hype cycles since the App Store, and the proliferation of mobile platform, big data, data science, fintech, cryptocurrency and AI. All of those has fueled innovations, funding, and economic growth, and you can trace back how one hype cycle will generate the next hype cycle with failures in between before a technology reach maturity.
 
-For this reason, I have based my career so far on the practice of implementing the abstract and malleable human thoughts towards something that has the potential to multiply their effectiveness and power in ways that we might never seen before.
+At maturity level, people more or less have seen what it is capable of and they have the ability to discern the usefulness of various products in the market and how it affect their lives. There are not that many variations of a particular platform at this level (e.g. the market is dominated only by iOS or Android on mobile, macOS or Windows on the desktop).
 
-*My background in the industry*:
+Technological progress sustained and at most automated the ways in which we live our lives. But, we don't strive to actually improve human condition on the whole, because it's probable that most of our effort is only about self-preservation. Moreover, we don't exactly understand what is an improvement, and everyone has their own subjective idea of it.
 
-I have worked on various software development work on user interface, client-server networking with TCP, UDP, and HTTP, maps, location services, audio processing, database, camera, and photography.
+From now on, I would look into not only on the practical side of software engineering with commercial applications, but also on the theoretical or social side of computer science, mathematics, minds, brains, machines, and how do they interact as a whole.
 
-They were done using MFC for the Windows platform, Qt on Mac OS X, Objective-C on iOS, and node.js.
-
-Looking at where the industry is heading, there is a mixture of demand in not just a stable, but also highly performant, concurrent system, and moreover a flexible, dynamic programming environment.
-
-Therefore, Apple's movement with swift programming language is something that I strongly support. On the other hand, I would also put more focus on web technologies platform with javascript, node.js, and system programming with rust.
+It's a very abstract goal that very few will understand, but it's probably the only goal left to pursue.
