@@ -13,7 +13,7 @@ I am working as a Senior iOS Development Engineer at [Tectus Dreamlab](https://t
 
 I maintain my online resume at [Stack Overflow Developer Story](https://stackoverflow.com/story/jessearmand). Please take a look to understand more about my professional history.
 
-As a software engineer, I have witnessed a few hype cycles since the App Store, and the proliferation of mobile platform, big data, data science, fintech, cryptocurrency and AI. All of those has fueled innovations, funding, and economic growth, and you can trace back how one hype cycle will generate the next hype cycle with failures in between before a technology reach maturity.
+As a software engineer, I have witnessed a few hype cycles since the App Store, and the proliferation of mobile platform, big data, data science, fintech, cryptocurrency and AI. All of those have fueled innovation, funding, and economic growth, and you can trace back how one hype cycle will generate the next hype cycle with failures in between before a technology reach maturity.
 
 At maturity level, people more or less have seen what it is capable of and they have the ability to discern the usefulness of various products in the market and how it affect their lives. There are not that many variations of a particular platform at this level (e.g. the market is dominated only by iOS or Android on mobile, macOS or Windows on the desktop).
 
