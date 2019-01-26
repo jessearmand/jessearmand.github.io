@@ -7,7 +7,11 @@ sharing: false
 footer: false
 ---
 
-Working with Swift and iOS development at [Touché](https:///gotouche.com) Singapore. A self-taught software engineer from computer and control systems education background.
+A self-taught software engineer from computer and control systems education background.
+
+I am working as a Senior iOS Development Engineer at [Tectus Dreamlab](https://tectusdreamlab.com/) Singapore starting from 11th February 2019. It will involve application of machine learning, augmented reality (AR) in Civil Engineering, which starts at iOS which has improved a lot in this area since the introduction of ARKit and CoreML.
+
+I maintain my online resume at [Stack Overflow Developer Story](https://stackoverflow.com/users/story/167024). Please take a look no understand more about my professional history.
 
 I generally believe that programming or writing code is the practice of putting down your ideas, thoughts, or formulas to the real world to be tested, used, and improved upon. This is one of the very few ways where a person could create and manipulate their surrounding environments with minimal effort compared to other types of endeavours.
 
