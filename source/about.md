@@ -9,9 +9,17 @@ footer: false
 
 A self-taught software engineer from computer and control systems education background.
 
-I am working as a Senior iOS Development Engineer at [Tectus Dreamlab](https://tectusdreamlab.com/) Singapore starting from 11th February 2019. It will at least involve application of machine learning, and augmented reality (AR) on the iOS platform which has improved a lot in this area since the introduction of ARKit and CoreML.
+I am working as a Senior iOS Development Engineer at [Tectus Dreamlab](https://tectusdreamlab.com/) Singapore.
 
-I maintain my online resume at [Stack Overflow Developer Story](https://stackoverflow.com/story/jessearmand). Please take a look to understand more about my professional history.
+My online resume is available at [Stack Overflow Developer Story](https://stackoverflow.com/story/jessearmand). Please take a look to understand more about my professional history.
+
+I have worked mostly on mobile applications development on iOS, and will continue to do so for the native / web platform. In general, I'm looking forward to the potential of Swift development ecosystem as a full stack platform, in addition to macOS / iOS.
+
+Also, I have taken an interest on machine learning (deep learning with python in particular), and rust as a system programming language that may replace the existing ones such as C / C++.
+
+I have been working on iOS platform for since 2008. At that time, I was fascinated and intrigued by the iOS when Apple released the first SDK to developers all over the world with iPhone being hackable and having the same base system as OS X.
+
+The first professional work was started during my transition from cross-platform Qt framework while working with Mac OS X platform. Ever since, I have familiarized myself through the iOS developer community and what they came up with. Afterwards, I continued working on various projects related to iOS and also node.js for a short time.
 
 As a software engineer, I have witnessed a few hype cycles since the App Store, and the proliferation of mobile platform, big data, data science, fintech, cryptocurrency and AI. All of those have fueled innovation, funding, and economic growth, and you can trace back how one hype cycle will generate the next hype cycle with failures in between before a technology reach maturity.
 
