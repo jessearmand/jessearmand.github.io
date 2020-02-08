@@ -14,6 +14,7 @@ Before that I would like to provide a few information where you can seriously le
 4. [FPV Know-it-All](https://www.fpvknowitall.com/): Created by none other than Joshua Bardwell himself. I do enjoy his explanation of various topics in a friendly manner and easy to understand for beginners. Everyone should watch his *PID Tuning Masterclass*. But, he seem to be only producing videos, not written articles.
 5. [Ethix](https://ethixltd.com/fpv/): Steele Davis a.k.a *Mr. Steele* is a part of them. His videos and piloting skills are what I would consider as *crazy* but in a positive way. Although there's a lot to be learned from his content, He doesn't seem to write any articles or provide a comprehensive guide for beginners. There's only a few [guidelines on FPV](https://ethixltd.com/fpv/).
 6. [TheJumperWire](http://www.thejumperwire.com/): Not very specific to FPV, but more on electronics, quadcopter, and programming it. The author, Sean Kelly [has been working with bitcraze on Crazyflie](https://www.bitcraze.io/2020/01/crazyflie-bolt-fpv-meets-autonomy/) which is a famous programmable and open source quadcopter platform to do research on autonomous drone. I enjoy his series of articles on [LiPo battery characteristics](http://www.thejumperwire.com/science/lipo-characteristics-part-1-introduction/).
+7. There's more, but I can't recall them.
 
 Also, I have to mention [Team BlackSheep](https://www.team-blacksheep.com/) and [VelociDrone](https://www.velocidrone.com/) where one is an FPV shop that has been one of the pioneers in the hobby, and VelociDrone which has been one of the go-to simulators to practice racing, freestyle, or online race. There are others such as LiftOff or DRL (Drone Racing League) simulator, but I haven't personally used them, because I haven't got the chance or a high-end gaming computer to also try them out.
 
@@ -28,11 +29,12 @@ It's recommended to practice with simulator before flying the real quad, but onl
 * LiPo battery characteristics, balanced charging, discharged, what is storage voltage, etc. is very important
 * Electronics and what are the symptoms when things are broken (motors, capacitors blowed up, short circuit)
 * Basics of Radio Frequency Communication.
-* What kind of antenna to use (Pagoda, Leaf, RHCP, LHCP, SMA or RP-SMA)
-* FPV frequency selection on Video Transwitter, Channel, Band, and Transmission Power numbers and how it's being regulated. In Singapore the limit is 100mW otherwise you would need permission
+* What's the difference between TBS transmitter vs FrSky
+* What kind of antenna to use (Pagoda, Leaf, RHCP or LHCP polarized, SMA or RP-SMA connector)
+* FPV frequency selection on video transmitter (VTX), which channel, band, and transmission power numbers and how it's being regulated. In Singapore the limit is 100mW otherwise you would need permission
 * Without watching the recorded video of my real flight — VelociDrone doesn't do recording automatically — I wouldn't be aware of my weaknesses
 * Throttle management is different on a 3-inch compared to 5-inch. With smaller propellers I have to make sure that throttle doesn't drop for too long at low altitude, otherwise the quad can easily drop to the ground and flip
-* VelociDrone's smallest mini quad is a 4-inch. Although they have micro quads, it's still not a 2-3 inch quad
+* VelociDrone's smallest mini quad is a 4-inch. Although they have micro quads, it's still not a 2-3 inch quad.
 * The list doesn't stop here while on the simulator you can simply ignore regulation, hardvare, electronics, and focus on flying.
 
 I realized that having an understanding of the fundamentals of building a quadcopter does help with developing an interest on FPV. But, having a good understanding or even mastery of the technology doesn't always translate to an interest in racing or freestyle flying. First and foremost FPV requires **time**, a certain personality trait and adventurous mindset. Because there is not much rationale behind practicing hard to learn the basics of high speed racing and acrobatic movements other than a sense of adventure and curiosity. Not to mention understanding the regulation of *Unmanned Aerial Vehicle* in countries you're flying in.
