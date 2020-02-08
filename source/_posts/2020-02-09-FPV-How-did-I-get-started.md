@@ -28,13 +28,13 @@ It's recommended to practice with simulator before flying the real quad, but onl
 
 * LiPo battery characteristics, balanced charging, discharged, what is storage voltage, etc. is very important
 * Electronics and how to recognize symptoms when things are broken (motors, capacitors blowed up, short circuit)
-* Basics of Radio Frequency Communication.
+* Basics of Radio Frequency Communication
 * What's the difference between TBS transceiver vs FrSky
-* Why some people need long range transceiver at 900 MHz
+* Why do some people need long range transceiver at 900 MHz
 * What kind of antenna to use (Pagoda, Leaf, RHCP or LHCP polarized, SMA or RP-SMA connector)
-* FPV frequency selection on video transmitter (VTX), which channel, band, and transmission power numbers and how it's being regulated. In Singapore the limit is 100mW otherwise you would need permission
-* Without watching the recorded video of my real flight — VelociDrone doesn't do recording automatically — I wouldn't be aware of my weaknesses
-* Throttle management is different on a 3-inch compared to 5-inch. With smaller propellers I have to make sure that throttle doesn't drop for too long at low altitude, otherwise the quad can easily drop to the ground and flip
+* FPV frequency selection on video transmitter (VTX), which channel, band, and transmission power numbers and how it's being regulated. In Singapore the limit is 100mW, otherwise you would need permission.
+* Without watching the recorded video of my real flight — VelociDrone doesn't do recording automatically — I wouldn't be aware of my weaknesses.
+* Throttle management is different on a 3-inch compared to 5-inch. With smaller propellers I have to make sure that throttle doesn't drop for too long at low altitude, otherwise the quad can easily drop to the ground and flip.
 * VelociDrone's smallest mini quad is a 4-inch. Although they have micro quads, it's still not a 2-3 inch quad.
 * The list doesn't stop here while on the simulator you can simply ignore regulation, hardware, electronics, and focus on flying.
 
