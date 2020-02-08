@@ -27,15 +27,16 @@ If I could restart I would start with micro quads that are often referred to as 
 It's recommended to practice with simulator before flying the real quad, but only after a few flights with my first 3-inch, then I started to really feel how real-life flying is compared to simulator. Aside from physics, real flying require more awareness of the environment, and the configuration of the hardware or flight controller (BetaFlight):
 
 * LiPo battery characteristics, balanced charging, discharged, what is storage voltage, etc. is very important
-* Electronics and what are the symptoms when things are broken (motors, capacitors blowed up, short circuit)
+* Electronics and how to recognize symptoms when things are broken (motors, capacitors blowed up, short circuit)
 * Basics of Radio Frequency Communication.
-* What's the difference between TBS transmitter vs FrSky
+* What's the difference between TBS transceiver vs FrSky
+* Why some people need long range transceiver at 900 MHz
 * What kind of antenna to use (Pagoda, Leaf, RHCP or LHCP polarized, SMA or RP-SMA connector)
 * FPV frequency selection on video transmitter (VTX), which channel, band, and transmission power numbers and how it's being regulated. In Singapore the limit is 100mW otherwise you would need permission
 * Without watching the recorded video of my real flight — VelociDrone doesn't do recording automatically — I wouldn't be aware of my weaknesses
 * Throttle management is different on a 3-inch compared to 5-inch. With smaller propellers I have to make sure that throttle doesn't drop for too long at low altitude, otherwise the quad can easily drop to the ground and flip
 * VelociDrone's smallest mini quad is a 4-inch. Although they have micro quads, it's still not a 2-3 inch quad.
-* The list doesn't stop here while on the simulator you can simply ignore regulation, hardvare, electronics, and focus on flying.
+* The list doesn't stop here while on the simulator you can simply ignore regulation, hardware, electronics, and focus on flying.
 
 I realized that having an understanding of the fundamentals of building a quadcopter does help with developing an interest on FPV. But, having a good understanding or even mastery of the technology doesn't always translate to an interest in racing or freestyle flying. First and foremost FPV requires **time**, a certain personality trait and adventurous mindset. Because there is not much rationale behind practicing hard to learn the basics of high speed racing and acrobatic movements other than a sense of adventure and curiosity. Not to mention understanding the regulation of *Unmanned Aerial Vehicle* in countries you're flying in.
 
