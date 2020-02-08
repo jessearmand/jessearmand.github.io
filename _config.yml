@@ -7,7 +7,9 @@ title: Ruminations
 subtitle: Code better not harder
 description: Software Engineer, Developer intrigued by the mobile, web and functional programming.
 author: Jesse Armand
-language: en
+language:
+- en
+- zh-CN
 timezone: Asia/Singapore
 
 # URL
