@@ -9,13 +9,11 @@ footer: false
 
 A self-taught software engineer from computer and control systems education background.
 
-I am working as a Senior iOS Development Engineer at [Tectus Dreamlab](https://tectusdreamlab.com/) Singapore.
+I am working as a Senior iOS Development Engineer at [Screening Eagle Dreamlab](https://screeningeagle.com/) Singapore.
 
 My online resume is available at [Stack Overflow Developer Story](https://stackoverflow.com/story/jessearmand). Please take a look to understand more about my professional history.
 
 I have worked mostly on mobile applications development on iOS, and will continue to do so for the native / web platform. In general, I'm looking forward to the potential of Swift development ecosystem as a full stack platform, in addition to macOS / iOS.
-
-Also, I have taken an interest on machine learning (deep learning with python in particular), and rust as a system programming language that may replace the existing ones such as C / C++.
 
 I have been working on iOS platform for since 2008. At that time, I was fascinated and intrigued by the iOS when Apple released the first SDK to developers all over the world with iPhone being hackable and having the same base system as OS X.
 

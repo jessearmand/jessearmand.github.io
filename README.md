@@ -1,7 +1,5 @@
 # Hexo
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/87dfe999-5291-4ff4-9933-d178856bdb34/deploy-status)](https://app.netlify.com/sites/jessearmand/deploys)
-
 A fast, simple & powerful blog framework, powered by [Node.js](https://nodejs.org).
 
 ## Features
