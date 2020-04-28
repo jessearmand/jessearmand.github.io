@@ -23,4 +23,4 @@ But, on the frontend side basically there are only 3 choices available in order 
 
 As an analog to VR, an FPV unit is a cheaper and practical system that has been used by hobbyists and professionals. This is especially apparent in Drone Racing, and we can obviously see its application in robotics or any remote sensing application, where you need a live video feed of a remote operation. AR which is now popular in smartphones, will have a better form as a headset. If we couple a digital FPV unit with augmented reality layer, we would have a much better experience on an FPV unit. 
 
-Although, we will not see these two industries (AR and FPV) merging anytime soon. I can see the connection between those two, plus VR. I do wish pandemics are solvable, but we or at least I have to prepare for the worst.
+Although, we will not see these two industries (AR and FPV) merging anytime soon. I can see the connection between the two, plus VR. I do wish pandemics are solvable, but we or at least I have to prepare for the worst.
