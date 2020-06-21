@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Git merge and rebase tips | Ruminations | Code better not harder</title>
+
+  
+  <meta name="author" content="Jesse Armand">
+  
+
+  
+  <meta name="description" content="About git merge and rebase">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="Git merge and rebase tips"/>
+
+  <meta property="og:site_name" content="Ruminations"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Ruminations" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Ruminations</a>
+    </h1>
+    <p class="site-description">Code better not harder</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/about.html">About</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>Git merge and rebase tips</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2012/09/22/git-merge-and-rebase-tips/" rel="bookmark">
+        <time class="entry-date published" datetime="2012-09-21T16:00:00.000Z">
+          2012-09-22
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>A few tips to deal with merge conflicts:</p>
+<h1 id="Github-Workflow"><a href="#Github-Workflow" class="headerlink" title="Github Workflow"></a>Github Workflow</h1><p>New guy create a separate branch, make some changes, and create a pull request. Only the core developers are allowed to observe the pull request and merge the changes to main branch.</p>
+<p>Good thing about pull request is, it could be discussed first, before the new guy is silently merging and pushing to the main branch.</p>
+<h1 id="Fetch-Merge"><a href="#Fetch-Merge" class="headerlink" title="Fetch, Merge"></a>Fetch, Merge</h1><p>Read <a href="http://longair.net/blog/2009/04/16/git-fetch-and-merge/" target="_blank" rel="noopener">here</a>.</p>
+<p>Basically, if both developers are working on the same file, they could peek at the remote changes before doing a merging.</p>
+<p>Let’s say the main developer who worked on the master branch would like to see a new feature on another branch:</p>
+<pre><code># git fetch origin master
+</code></pre><p>Look at what have changed:</p>
+<pre><code># git diff origin/new_ui
+</code></pre><p>Decided that it’s okay</p>
+<pre><code># git merge --no-ff origin/new_ui
+</code></pre><p>Note the –no-ff here:</p>
+<p>The –no-ff flag causes the merge to always create a new commit object, even if the merge could be performed with a fast-forward. This avoids losing information about the historical existence of a feature branch and groups together all commits that together added the feature</p>
+<p>From a good answer on stackoverflow:<br><a href="http://stackoverflow.com/questions/2850369/why-does-git-use-fast-forward-merging-by-default" target="_blank" rel="noopener">http://stackoverflow.com/questions/2850369/why-does-git-use-fast-forward-merging-by-default</a></p>
+<p>But, this is a simple case… this is usually okay if there are no conflicting changes. If there is, it’s usually better to use a fetch, rebase, merge workflow.</p>
+<h1 id="Fetch-Merge-Rebase"><a href="#Fetch-Merge-Rebase" class="headerlink" title="Fetch, Merge, Rebase"></a>Fetch, Merge, Rebase</h1><p>An <a href="http://jeffkreeftmeijer.com/2010/the-magical-and-not-harmful-rebase/" target="_blank" rel="noopener">article</a> related to git flow</p>
+<p>A good explanation is <a href="http://www.randyfay.com/comment/1107#comment-1107" target="_blank" rel="noopener">here</a> (read especially the example in comment-1107)</p>
+<p>Quote:<br>When Is the Merge Workflow OK?</p>
+<p>The merge workflow will do you no damage at all if you</p>
+<ul>
+<li>Only have one committer (or a very small number of committers, and you trust them all)</li>
+<li>You don’t care much about reading your history</li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/git/">git</a>, <a href="/categories/git/git-merge/">git-merge</a>, <a href="/categories/git/git-merge/git-rebase/">git-rebase</a>, <a href="/categories/git/git-merge/git-rebase/git-fetch/">git-fetch</a>
+    </span>
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2020 Jesse Armand
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

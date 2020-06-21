@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Rewind view controller states (observables) | Ruminations | Code better not harder</title>
+
+  
+  <meta name="author" content="Jesse Armand">
+  
+
+  
+  <meta name="description" content="Software Engineer, Developer intrigued by the mobile, web and functional programming.">
+  
+
+  
+  <meta name="keywords" content="swift, ios, rxswift, rxcocoa,">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="Rewind view controller states (observables)"/>
+
+  <meta property="og:site_name" content="Ruminations"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Ruminations" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Ruminations</a>
+    </h1>
+    <p class="site-description">Code better not harder</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/about.html">About</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>Rewind view controller states (observables)</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2016/07/19/rewind-view-controller-states-observables/" rel="bookmark">
+        <time class="entry-date published" datetime="2016-07-19T15:54:09.000Z">
+          2016-07-19
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>A pattern that was not immediately obvious when you began to use an <a href="https://github.com/ReactiveX/RxSwift" target="_blank" rel="noopener">Rx</a>-based view controller setup is to undo/reset all of the observables that have been subscribed to after it re-appears.</p>
+<p>This is a common behaviour in a navigation controller stack of view controllers. We might have various controls in a view controller, it could be a text field, text view, or anything that you might want to return to from the next controller in a navigation stack.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"><span class="keyword">import</span> RxSwift</span><br><span class="line"><span class="keyword">import</span> RxCocoa</span><br><span class="line"></span><br><span class="line"><span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">FormViewController</span>: <span class="title">UIViewController</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> disposeBag: <span class="type">DisposeBag</span> = <span class="type">DisposeBag</span>()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> completed: <span class="type">PublishSubject</span>&lt;<span class="type">Void</span>&gt;()</span><br><span class="line"></span><br><span class="line">    <span class="built_in">lazy</span> <span class="keyword">var</span> textField: <span class="type">UITextField</span> = &#123;</span><br><span class="line">        <span class="keyword">let</span> textField = <span class="type">UITextField</span>()</span><br><span class="line">        textField.autocorrectionType = .<span class="type">No</span></span><br><span class="line">        textField.autocapitalizationType = .<span class="type">None</span></span><br><span class="line">        textField.returnKeyType = .<span class="type">Done</span></span><br><span class="line">        <span class="keyword">return</span> textField</span><br><span class="line">    &#125;()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">viewDidLoad</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.viewDidLoad()</span><br><span class="line"></span><br><span class="line">        <span class="comment">// We indicate that a certain action should be completed,</span></span><br><span class="line">        <span class="comment">// once the text field's text reaches a certain length</span></span><br><span class="line">        textField.rx_text</span><br><span class="line">            .asObservable()</span><br><span class="line">            .subscribeNext &#123; text <span class="keyword">in</span></span><br><span class="line">                <span class="keyword">if</span> text.length &gt; <span class="number">6</span> &#123; </span><br><span class="line">                    completed.onCompleted()</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            .addDisposableTo(disposeBag)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">viewWillAppear</span><span class="params">(animated: Bool)</span></span> &#123; </span><br><span class="line">        <span class="keyword">super</span>.viewWillAppear(animated)</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Observe when returning</span></span><br><span class="line">        completed = <span class="type">PublishSubject</span>&lt;<span class="type">Void</span>&gt;()</span><br><span class="line">        completed</span><br><span class="line">            .subscribeCompleted &#123; </span><br><span class="line">            <span class="comment">// A subscribed action is completed</span></span><br><span class="line">        &#125;</span><br><span class="line">        .addDisposableTo(disposeBag)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">viewWillDisappear</span><span class="params">(animated: Bool)</span></span> &#123; </span><br><span class="line">        <span class="keyword">super</span>.viewWillDisappear(animated)</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Clean up all observables</span></span><br><span class="line">        disposeBag = <span class="type">DisposeBag</span>()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Typically, we would want to do a certain action in a view controller, that could be observed, and it should be known when does it complete. One example is network request, but the above example is simplified to illustrate the idea of running an action that is triggered by an observed event (text field event). <a href="http://reactivex.io/documentation/subject.html" target="_blank" rel="noopener">PublishSubject</a> is a common example to represent an action subject that can be subscribed to and could subscribe to an observable.</p>
+<p>In the snippet above, on view appearance, the action is being reset, and re-subscribed, while on view disappearance, the disposeBag is being re-created. Once it returns to this view controller from the navigation stack it will have the completed subject re-created and re-subscribed.</p>
+<p>Without the above setup, a completed action remains completed and it will not emit anymore items that is being observed.</p>
+<p>To think about it a little bit further, before Rx I often do not have an idea on how to “replay” a certain action within scenes of view controllers. Traditionally this can be done by re-creating whatever it’s an object responsible for such action (e.g. NSURLRequest).</p>
+<p>It can always be done traditionally without Rx, but in that way there doesn’t seem to be a generalisation of idea in how to represent an action that can be anything.</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/swift-ios-rxswift-rxcocoa/">swift, ios, rxswift, rxcocoa</a>
+    </span>
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2020 Jesse Armand
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

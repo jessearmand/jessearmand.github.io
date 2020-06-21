@@ -1,0 +1,297 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Page 2 | Ruminations | Code better not harder</title>
+
+  
+  <meta name="author" content="Jesse Armand">
+  
+
+  
+  <meta name="description" content="Software Engineer, Developer intrigued by the mobile, web and functional programming.">
+  
+
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  
+
+  <meta property="og:site_name" content="Ruminations"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Ruminations" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Ruminations</a>
+    </h1>
+    <p class="site-description">Code better not harder</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/about.html">About</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2013/06/11/im-sold-with-golang/"><span>I&#39;m sold with golang</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2013/06/11/im-sold-with-golang/" rel="bookmark">
+        <time class="entry-date published" datetime="2013-06-10T16:00:00.000Z">
+          2013-06-11
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>While I was waiting for WWDC, I did an apache bench for simple hello world server written in go, ruby’s eventmachine, python’s tornado and twisted, and the well-known node.js.</p>
+<pre><code>% ab -r -k -n 15000 -c 50 -e ~/Documents/each_platform_results.csv http://localhost:port/
+</code></pre><p>15000 requests and 50 concurrent requests is the only setting that I could test on all platforms without failing tests with an error like this:</p>
+<pre><code>apr_socket_connect(): Operation already in progress (37)
+</code></pre><p>How is the result?</p>
+<p>OK, let’s start with tornado (I believe it’s used by facebook for realtime news feed?). Here’s the code:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tornado.httpserver</span><br><span class="line"><span class="keyword">import</span> tornado.ioloop</span><br><span class="line"><span class="keyword">import</span> tornado.web</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MainHandler</span><span class="params">(tornado.web.RequestHandler)</span>:</span></span><br><span class="line"><span class="meta">    @tornado.web.asynchronous</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.write(<span class="string">"Hello World\n"</span>)</span><br><span class="line">        self.finish()</span><br><span class="line"></span><br><span class="line">application = tornado.web.Application([</span><br><span class="line">    (<span class="string">r"/"</span>, MainHandler),</span><br><span class="line">])</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    http_server = tornado.httpserver.HTTPServer(application)</span><br><span class="line">    http_server.listen(<span class="number">8001</span>)</span><br><span class="line">    print(<span class="string">"Tornado listening at 8001"</span>)</span><br><span class="line">    tornado.ioloop.IOLoop.instance().start()</span><br></pre></td></tr></table></figure>
+<p>Result:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">Server Software:        TornadoServer/3.0.2</span><br><span class="line">Server Hostname:        0.0.0.0</span><br><span class="line">Server Port:            8001</span><br><span class="line"></span><br><span class="line">Document Path:          /</span><br><span class="line">Document Length:        12 bytes</span><br><span class="line"></span><br><span class="line">Concurrency Level:      50</span><br><span class="line">Time taken for tests:   5.072 seconds</span><br><span class="line">Complete requests:      15000</span><br><span class="line">Failed requests:        0</span><br><span class="line">Write errors:           0</span><br><span class="line">Keep-Alive requests:    15000</span><br><span class="line">Total transferred:      3465000 bytes</span><br><span class="line">HTML transferred:       180000 bytes</span><br><span class="line">Requests per second:    2957.67 [#/sec] (mean)</span><br><span class="line">Time per request:       16.905 [ms] (mean)</span><br><span class="line">Time per request:       0.338 [ms] (mean, across all concurrent requests)</span><br><span class="line">Transfer rate:          667.21 [Kbytes/sec] received</span><br><span class="line"></span><br><span class="line">Connection Times (ms)</span><br><span class="line">              min  mean[+/-sd] median   max</span><br><span class="line">Connect:        0    0   0.1      0       1</span><br><span class="line">Processing:     6   17   6.0     15      65</span><br><span class="line">Waiting:        6   17   5.9     15      65</span><br><span class="line">Total:          7   17   6.0     15      65</span><br><span class="line"></span><br><span class="line">Percentage of the requests served within a certain time (ms)</span><br><span class="line">  50%     15</span><br><span class="line">  66%     16</span><br><span class="line">  75%     16</span><br><span class="line">  80%     17</span><br><span class="line">  90%     27</span><br><span class="line">  95%     30</span><br><span class="line">  98%     35</span><br><span class="line">  99%     38</span><br><span class="line"> 100%     65 (longest request)</span><br></pre></td></tr></table></figure>
+<p>Then… the reputable Twisted:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> twisted.web <span class="keyword">import</span> server, resource</span><br><span class="line"><span class="keyword">from</span> twisted.internet <span class="keyword">import</span> reactor</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HelloResource</span><span class="params">(resource.Resource)</span>:</span></span><br><span class="line">    isLeaf = <span class="keyword">True</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">render_GET</span><span class="params">(self, request)</span>:</span></span><br><span class="line">        request.setHeader(<span class="string">"Content-Type"</span>, <span class="string">"text/plain"</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Hello World\n"</span></span><br><span class="line"></span><br><span class="line">port = <span class="number">8001</span></span><br><span class="line">reactor.listenTCP(port, server.Site(HelloResource()))</span><br><span class="line"><span class="keyword">print</span> <span class="string">"Twisted running at %d"</span> % port</span><br><span class="line">reactor.run()</span><br></pre></td></tr></table></figure>
+<p>Result:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">Server Software:        TwistedWeb/13.0.0</span><br><span class="line">Server Hostname:        0.0.0.0</span><br><span class="line">Server Port:            8001</span><br><span class="line"></span><br><span class="line">Document Path:          /</span><br><span class="line">Document Length:        12 bytes</span><br><span class="line"></span><br><span class="line">Concurrency Level:      50</span><br><span class="line">Time taken for tests:   5.893 seconds</span><br><span class="line">Complete requests:      15000</span><br><span class="line">Failed requests:        0</span><br><span class="line">Write errors:           0</span><br><span class="line">Keep-Alive requests:    0</span><br><span class="line">Total transferred:      2115000 bytes</span><br><span class="line">HTML transferred:       180000 bytes</span><br><span class="line">Requests per second:    2545.19 [#/sec] (mean)</span><br><span class="line">Time per request:       19.645 [ms] (mean)</span><br><span class="line">Time per request:       0.393 [ms] (mean, across all concurrent requests)</span><br><span class="line">Transfer rate:          350.46 [Kbytes/sec] received</span><br><span class="line"></span><br><span class="line">Connection Times (ms)</span><br><span class="line">              min  mean[+/-sd] median   max</span><br><span class="line">Connect:        0    0   0.2      0       2</span><br><span class="line">Processing:    11   20   2.2     19      34</span><br><span class="line">Waiting:       11   20   2.2     19      34</span><br><span class="line">Total:         11   20   2.2     19      34</span><br><span class="line"></span><br><span class="line">Percentage of the requests served within a certain time (ms)</span><br><span class="line">  50%     19</span><br><span class="line">  66%     20</span><br><span class="line">  75%     20</span><br><span class="line">  80%     21</span><br><span class="line">  90%     22</span><br><span class="line">  95%     23</span><br><span class="line">  98%     25</span><br><span class="line">  99%     27</span><br><span class="line"> 100%     34 (longest request)</span><br></pre></td></tr></table></figure>
+<p>What about ruby eventmachine?</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">require</span> <span class="string">'eventmachine'</span></span><br><span class="line"><span class="keyword">require</span> <span class="string">'evma_httpserver'</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Handler</span>  &lt; EventMachine::Connection</span></span><br><span class="line">  <span class="keyword">include</span> EventMachine::HttpServer</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">process_http_request</span></span></span><br><span class="line">    resp = EventMachine::DelegatedHttpResponse.new( <span class="keyword">self</span> )</span><br><span class="line">    resp.status = <span class="number">200</span></span><br><span class="line">    resp.content = <span class="string">"Hello World!"</span></span><br><span class="line">    resp.send_response</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">EventMachine::run &#123;</span><br><span class="line">  EventMachine::start_server(<span class="string">"0.0.0.0"</span>, <span class="number">8002</span>, Handler)</span><br><span class="line">  puts <span class="string">"Listening... at 8002"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Result:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">Server Software:</span><br><span class="line">Server Hostname:        0.0.0.0</span><br><span class="line">Server Port:            8002</span><br><span class="line"></span><br><span class="line">Document Path:          /</span><br><span class="line">Document Length:        12 bytes</span><br><span class="line"></span><br><span class="line">Concurrency Level:      50</span><br><span class="line">Time taken for tests:   1.909 seconds</span><br><span class="line">Complete requests:      15000</span><br><span class="line">Failed requests:        0</span><br><span class="line">Write errors:           0</span><br><span class="line">Keep-Alive requests:    0</span><br><span class="line">Total transferred:      780000 bytes</span><br><span class="line">HTML transferred:       180000 bytes</span><br><span class="line">Requests per second:    7858.99 [#/sec] (mean)</span><br><span class="line">Time per request:       6.362 [ms] (mean)</span><br><span class="line">Time per request:       0.127 [ms] (mean, across all concurrent requests)</span><br><span class="line">Transfer rate:          399.09 [Kbytes/sec] received</span><br><span class="line"></span><br><span class="line">Connection Times (ms)</span><br><span class="line">              min  mean[+/-sd] median   max</span><br><span class="line">Connect:        0    0   4.4      0     245</span><br><span class="line">Processing:     1    6  19.5      4     247</span><br><span class="line">Waiting:        1    5  19.3      3     247</span><br><span class="line">Total:          2    6  20.0      4     247</span><br><span class="line"></span><br><span class="line">Percentage of the requests served within a certain time (ms)</span><br><span class="line">  50%      4</span><br><span class="line">  66%      4</span><br><span class="line">  75%      4</span><br><span class="line">  80%      4</span><br><span class="line">  90%      6</span><br><span class="line">  95%      8</span><br><span class="line">  98%     11</span><br><span class="line">  99%     80</span><br><span class="line"> 100%    247 (longest request)</span><br></pre></td></tr></table></figure>
+<p>Wow, that’s faster than tornado or twisted in terms of requests per second, but it transferred less data for some reason. OK, we move on to node.js, I expect it should be faster.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"></span><br><span class="line">http.createServer(<span class="function"><span class="keyword">function</span> (<span class="params">request, response</span>) </span>&#123;</span><br><span class="line">  response.writeHead(<span class="number">200</span>, &#123; <span class="string">"Content-Type"</span>: <span class="string">"text/plain"</span> &#125;);</span><br><span class="line">  response.write(<span class="string">"Hello World\n"</span>);</span><br><span class="line">  response.end();</span><br><span class="line">&#125;).listen(<span class="number">8000</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'Listening on port 8000...'</span>);</span><br></pre></td></tr></table></figure>
+<p>Result:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">Server Software:</span><br><span class="line">Server Hostname:        0.0.0.0</span><br><span class="line">Server Port:            8000</span><br><span class="line"></span><br><span class="line">Document Path:          /</span><br><span class="line">Document Length:        12 bytes</span><br><span class="line"></span><br><span class="line">Concurrency Level:      50</span><br><span class="line">Time taken for tests:   2.181 seconds</span><br><span class="line">Complete requests:      15000</span><br><span class="line">Failed requests:        0</span><br><span class="line">Write errors:           0</span><br><span class="line">Keep-Alive requests:    0</span><br><span class="line">Total transferred:      1695000 bytes</span><br><span class="line">HTML transferred:       180000 bytes</span><br><span class="line">Requests per second:    6877.80 [#/sec] (mean)</span><br><span class="line">Time per request:       7.270 [ms] (mean)</span><br><span class="line">Time per request:       0.145 [ms] (mean, across all concurrent requests)</span><br><span class="line">Transfer rate:          758.98 [Kbytes/sec] received</span><br><span class="line"></span><br><span class="line">Connection Times (ms)</span><br><span class="line">              min  mean[+/-sd] median   max</span><br><span class="line">Connect:        0    0   1.1      0     137</span><br><span class="line">Processing:     1    7  11.9      6     142</span><br><span class="line">Waiting:        1    7  11.8      6     142</span><br><span class="line">Total:          2    7  11.9      6     142</span><br><span class="line"></span><br><span class="line">Percentage of the requests served within a certain time (ms)</span><br><span class="line">  50%      6</span><br><span class="line">  66%      6</span><br><span class="line">  75%      6</span><br><span class="line">  80%      6</span><br><span class="line">  90%      7</span><br><span class="line">  95%      9</span><br><span class="line">  98%     12</span><br><span class="line">  99%    101</span><br><span class="line"> 100%    142 (longest request)</span><br></pre></td></tr></table></figure>
+<p>Yes, unsurprisingly it has the highest transfer rate, although it has less mean requests / sec compared to ruby event machine. Based on the percentage of the requests served, node.js is faster.</p>
+<p>Are we done? No, the last but not least:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">  <span class="string">"fmt"</span></span><br><span class="line">  <span class="string">"io"</span></span><br><span class="line">  <span class="string">"net/http"</span></span><br><span class="line">  <span class="string">"runtime"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">  http.HandleFunc(<span class="string">"/"</span>, <span class="function"><span class="keyword">func</span><span class="params">(w http.ResponseWriter, r *http.Request)</span></span> &#123;</span><br><span class="line">    w.Header().Set(<span class="string">"Content-Type"</span>, <span class="string">"text/plain"</span>)</span><br><span class="line">    io.WriteString(w, <span class="string">"Hello World\n"</span>)</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  runtime.GOMAXPROCS(<span class="number">4</span>)</span><br><span class="line">  fmt.Println(<span class="string">"Server running at http://127.0.0.1:3000/ with GOMAXPROCS(4) on i7"</span>)</span><br><span class="line">  http.ListenAndServe(<span class="string">"127.0.0.1:3000"</span>, <span class="literal">nil</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Result:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">Server Software:</span><br><span class="line">Server Hostname:        0.0.0.0</span><br><span class="line">Server Port:            3000</span><br><span class="line"></span><br><span class="line">Document Path:          /</span><br><span class="line">Document Length:        12 bytes</span><br><span class="line"></span><br><span class="line">Concurrency Level:      50</span><br><span class="line">Time taken for tests:   0.228 seconds</span><br><span class="line">Complete requests:      15000</span><br><span class="line">Failed requests:        0</span><br><span class="line">Write errors:           0</span><br><span class="line">Keep-Alive requests:    15000</span><br><span class="line">Total transferred:      2070000 bytes</span><br><span class="line">HTML transferred:       180000 bytes</span><br><span class="line">Requests per second:    65771.30 [#/sec] (mean)</span><br><span class="line">Time per request:       0.760 [ms] (mean)</span><br><span class="line">Time per request:       0.015 [ms] (mean, across all concurrent requests)</span><br><span class="line">Transfer rate:          8863.71 [Kbytes/sec] received</span><br><span class="line"></span><br><span class="line">Connection Times (ms)</span><br><span class="line">              min  mean[+/-sd] median   max</span><br><span class="line">Connect:        0    0   0.1      0       2</span><br><span class="line">Processing:     0    1   0.1      1       2</span><br><span class="line">Waiting:        0    1   0.1      1       2</span><br><span class="line">Total:          0    1   0.2      1       3</span><br><span class="line"></span><br><span class="line">Percentage of the requests served within a certain time (ms)</span><br><span class="line">  50%      1</span><br><span class="line">  66%      1</span><br><span class="line">  75%      1</span><br><span class="line">  80%      1</span><br><span class="line">  90%      1</span><br><span class="line">  95%      1</span><br><span class="line">  98%      1</span><br><span class="line">  99%      1</span><br><span class="line"> 100%      3 (longest request)</span><br></pre></td></tr></table></figure>
+<p>Transfer rate is 8863.71 Kbytes/sec with 65771.3 requests per second?</p>
+<p>Go lang, I’m sold.</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/http-server-benchmark/">http-server-benchmark</a>, <a href="/categories/http-server-benchmark/go/">go</a>, <a href="/categories/http-server-benchmark/go/ruby/">ruby</a>, <a href="/categories/http-server-benchmark/go/ruby/python/">python</a>, <a href="/categories/http-server-benchmark/go/ruby/python/nodejs/">nodejs</a>, <a href="/categories/http-server-benchmark/go/ruby/python/nodejs/eventmachine/">eventmachine</a>, <a href="/categories/http-server-benchmark/go/ruby/python/nodejs/eventmachine/twisted/">twisted</a>, <a href="/categories/http-server-benchmark/go/ruby/python/nodejs/eventmachine/twisted/tornado/">tornado</a>
+    </span>
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2012/09/23/need-to-load-view/"><span>Need to Load View</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2012/09/23/need-to-load-view/" rel="bookmark">
+        <time class="entry-date published" datetime="2012-09-22T16:00:00.000Z">
+          2012-09-23
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>Just found out today that if a UIViewController subclass is constructed programmatically (that is without using Interface Builder),</p>
+<p>and, if we don’t create and assign a UIView inside loadView:</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)loadView</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">self</span>.view = [[<span class="built_in">UIView</span> alloc] initWithFrame:[[<span class="built_in">UIScreen</span> mainScreen] bounds]];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Then, this could ruin the animation transition of <code>presentViewController:animated:completion:</code>. In other words, the transition animation doesn’t occur.</p>
+<p>There’s a reason why the documentation says that we need to implement this. I saw at least one <a href="https://github.com/zxing/zxing/tree/master/iphone/ZXingWidget" target="_blank" rel="noopener">project</a> that doesn’t follow this rule.</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/uiviewcontroller/">uiviewcontroller</a>, <a href="/categories/uiviewcontroller/uiview/">uiview</a>
+    </span>
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2012/09/22/git-merge-and-rebase-tips/"><span>Git merge and rebase tips</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2012/09/22/git-merge-and-rebase-tips/" rel="bookmark">
+        <time class="entry-date published" datetime="2012-09-21T16:00:00.000Z">
+          2012-09-22
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>A few tips to deal with merge conflicts:</p>
+<h1 id="Github-Workflow"><a href="#Github-Workflow" class="headerlink" title="Github Workflow"></a>Github Workflow</h1><p>New guy create a separate branch, make some changes, and create a pull request. Only the core developers are allowed to observe the pull request and merge the changes to main branch.</p>
+<p>Good thing about pull request is, it could be discussed first, before the new guy is silently merging and pushing to the main branch.</p>
+<h1 id="Fetch-Merge"><a href="#Fetch-Merge" class="headerlink" title="Fetch, Merge"></a>Fetch, Merge</h1><p>Read <a href="http://longair.net/blog/2009/04/16/git-fetch-and-merge/" target="_blank" rel="noopener">here</a>.</p>
+<p>Basically, if both developers are working on the same file, they could peek at the remote changes before doing a merging.</p>
+<p>Let’s say the main developer who worked on the master branch would like to see a new feature on another branch:</p>
+<pre><code># git fetch origin master
+</code></pre><p>Look at what have changed:</p>
+<pre><code># git diff origin/new_ui
+</code></pre><p>Decided that it’s okay</p>
+<pre><code># git merge --no-ff origin/new_ui
+</code></pre><p>Note the –no-ff here:</p>
+<p>The –no-ff flag causes the merge to always create a new commit object, even if the merge could be performed with a fast-forward. This avoids losing information about the historical existence of a feature branch and groups together all commits that together added the feature</p>
+<p>From a good answer on stackoverflow:<br><a href="http://stackoverflow.com/questions/2850369/why-does-git-use-fast-forward-merging-by-default" target="_blank" rel="noopener">http://stackoverflow.com/questions/2850369/why-does-git-use-fast-forward-merging-by-default</a></p>
+<p>But, this is a simple case… this is usually okay if there are no conflicting changes. If there is, it’s usually better to use a fetch, rebase, merge workflow.</p>
+<h1 id="Fetch-Merge-Rebase"><a href="#Fetch-Merge-Rebase" class="headerlink" title="Fetch, Merge, Rebase"></a>Fetch, Merge, Rebase</h1><p>An <a href="http://jeffkreeftmeijer.com/2010/the-magical-and-not-harmful-rebase/" target="_blank" rel="noopener">article</a> related to git flow</p>
+<p>A good explanation is <a href="http://www.randyfay.com/comment/1107#comment-1107" target="_blank" rel="noopener">here</a> (read especially the example in comment-1107)</p>
+<p>Quote:<br>When Is the Merge Workflow OK?</p>
+<p>The merge workflow will do you no damage at all if you</p>
+<ul>
+<li>Only have one committer (or a very small number of committers, and you trust them all)</li>
+<li>You don’t care much about reading your history</li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/git/">git</a>, <a href="/categories/git/git-merge/">git-merge</a>, <a href="/categories/git/git-merge/git-rebase/">git-rebase</a>, <a href="/categories/git/git-merge/git-rebase/git-fetch/">git-fetch</a>
+    </span>
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+
+<nav class="pagination">
+  
+  <a href="/" class="pagination-prev">Prev</a>
+  
+  
+</nav>
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2020 Jesse Armand
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

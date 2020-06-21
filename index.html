@@ -1,0 +1,750 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Ruminations | Code better not harder</title>
+
+  
+  <meta name="author" content="Jesse Armand">
+  
+
+  
+  <meta name="description" content="Software Engineer, Developer intrigued by the mobile, web and functional programming.">
+  
+
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  
+
+  <meta property="og:site_name" content="Ruminations"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Ruminations" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Ruminations</a>
+    </h1>
+    <p class="site-description">Code better not harder</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/about.html">About</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2020/06/22/It-s-not-about-flying/"><span>It&#39;s not about flying</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/06/22/It-s-not-about-flying/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-06-21T16:43:08.000Z">
+          2020-06-22
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>2 months has gone by, and due to various circumstances, bad timing, rain, and coronavirus doom &amp; gloom, I haven’t flown at all. But, I have flown in the simulator a lot more. On the other side, I have heard from FPV pilots that freestyle or racing, or whatever we’d like to call it is not only about flying. But isn’’t flying a core part of the experience and the main reason why we got interested in the first place? Let’s assume that it’s.</p>
+<p> If flying is the ultimate goal, then just spend extra money to buy a good quality assembled quad such as <a href="https://www.getfpv.com/mr-steele-apex-5-quadcopter-rtf-bundle-6s.html" target="_blank" rel="noopener">Mr Steele’s Apex</a> or <a href="https://www.getfpv.com/johnnyfpv-drone-bundle.html" target="_blank" rel="noopener">JohnnyFPV’s bundle</a> and keep practicing. With enough effort, shouldn’t anyone be able to acquire the same level of success and experience? But does the tool defined the person behind the tool? Yes, if the person is the one building it, but what if there’s more than one quad with varying styles built by the same person, a team, or a company?</p>
+<p> After a while, everyone is unique in this hobby / profession. That’s the interesting part of craftsmanship. JohhnyFPV is not and never be the same as Mr Steele, Joshua Bardwell, Le Drib, Alex Vanover, Quadmovr, Boris B, Team BlackSheep (TBS) or Drone Racing League (DRL). Also, there are few others less known ones such as PhantomFPV, which has his own unique style of teaching:</p>
+ <div class="video-container"><iframe src="//www.youtube.com/embed/cGTHj6v_I8Q" frameborder="0" allowfullscreen></iframe></div>
+<p> J-TRUE FPV that I’ve just recently been watching:</p>
+ <div class="video-container"><iframe src="//www.youtube.com/embed/ks8jC493ssM" frameborder="0" allowfullscreen></iframe></div>
+<p> I’m really impressed with this one in particular:</p>
+ <div class="video-container"><iframe src="//www.youtube.com/embed/2qtuZh8L6x4" frameborder="0" allowfullscreen></iframe></div>
+<p> Each has developed their own unique style after a long time. Now, we’d like to think that the style was developed due to how they practiced flying. A pilot is just someone who flies an aircraft? Right? That’s probably right, but only to a limited degree. We have to understand that there’s a reason why each of them has their own preferences of quadcopter configuration, flight controller tuning, radio transmitter, goggles, FPV camera, motors, frame and propeller size, and weight. For example, Mr Steele prefers a CCD technology in an FPV camera due to lower latency, while the majority of popular FPV cameras are equipped with CMOS technology, probably because they are cheaper. PhantomFPV prefers a small-sized radio transmitter, and he’s yet to reveal the reason why.</p>
+<p> I can feel in the simulator how a DRL Racer 4, which is the racing quad used by DRL is heavier, and it needs a slightly different handling. I don’t prefer that most of the time, compared to a smaller and more popular quad with a 5-inch propeller size at about 500-600 grams, while DRL Racer 4 is 7-inch and about 1 kg in weight.</p>
+<p> Each of these configuration and components affect the feel of flying, and not everyone prefers the same configuration, it really depends. Also, a beginner or someone who doesn’t fly often may not need a very specific configuration. That’s where we can start to explore why it’s more than just flying.</p>
+<p>From what I’ve learned so far, I acknowledge that a lot of them are DIY engineers with a relatively good experience in DIY electronics, embedded software, radio control, or RF engineering, and just a basic understanding of aerodynamics. That’s especially true of BetaFlight developers, TBS or DRL. But, it really is a different world, although related from the software industry that I came from.</p>
+<p>In the software industry, we put personal computers and mobile device as the core of activity, as if they are the most important element of developing software. Which we should have known that it’s not, but we are often out-of-touch from the users who used our software, and this is not necessarily always bad, as in modern software products there are too many layers on the technical and business side, and each developer of a particular layer (let’s say database, graphics engine, with the exception of user interface) do not necessarily need to interact with an end user or even use the final product of such software. </p>
+<p>As software run everywhere, even in flight controllers! There are embedded software engineers that write software for flight controllers of course, and these people can be pilots or not. But, I’m pretty sure there should be pilots among BetaFlight developers, otherwise they won’t be able to form opinions and ideas on how a flight controller should work.</p>
+<p>That’s the great thing about this industry, and somehow the core technology just magically exist for beginners such as myself. It certainly has a steep learning curve, and a lot of gray areas regarding regulations (Radio Frequency usage and UAV). Also, an easy-to-use software is not very common here. With the slight exception of BetaFlight, the majority of software being used for FPV system is not made for the average user. </p>
+<p>Investing huge amount of effort to make the software much better and easy to use in this industry is risky, and probably could only be afforded by companies such as DJI or DRL. Even TBS won’t go as far as producing software for the masses. Skydio, on the other side focuses on autonomous drone, which is what they should be doing.</p>
+<p>Now, to summarize should someone learn to build a racing quad in this hobby? The answer is yes. There’s a lot of step-by-step tutorials available. It’s not necessary to build a meticulously engineered product to be sold, or you’ll waste a lot of time and money, just enough to fly freestyle and racing. Then go from there as experience accumulates.</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/fpv-drone-quadcopter-hobby-racing-freestyle-DRL-VRL-simulator-electronics/">fpv, drone, quadcopter, hobby, racing, freestyle, DRL, VRL, simulator, electronics</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2020/04/26/Freestyle-or-Racing/"><span>Freestyle or Racing?</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/04/26/Freestyle-or-Racing/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-04-26T14:15:46.000Z">
+          2020-04-26
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>When I started the hobby, I am aware that there are two ways of flying FPV which is racing and freestyle. Drone racing has been going on for a while with professional competition all over the world such as DRL and MultiGP. But, freestyle doesn’t seem to have a specific venue, because as the name suggests, it’s free flying with style. </p>
+<p>I would like to explore a bit on how does someone who started with FPV approach these two styles of flying. In racing, there are specific tracks, obstacles, goals, and time tracker. It’s structured, and the goal is obvious: to be the fastest to finish the track. But does that mean being the fastest is all it takes? Depends on what it means to be <em>fast</em>. I have been using the DRL (Drone Racing League) simulator, and have participated in the 2020 Tryout tracks, which is a course in <code>Drone Park</code>, and as someone who is just starting, it’s extremely hard to get to the top. Even on a simulator, not the real race.</p>
+<p>How difficult is it to race at Drone Park?</p>
+<div class="video-container"><iframe src="//www.youtube.com/embed/RiVMsbak_FY" frameborder="0" allowfullscreen></iframe></div>
+<p>As you can see from the video, the track is the most challenging I’ve ever seen compared to DRL tracks in previous years, as it involves multi-directional full-throttle maneuver, power-loops, corkscrew, and more. A slight interruption to flow will just ruin everything and it will definitely drop your lap time. I could finish the track but with about 2-3 of the time it takes compared to the #1 in the leaderboard. Also, it’s very difficult to do inverted power loop, while staying on track with full throttle. <a href="https://lockheedmartin.com/en-us/news/events/ai-innovation-challenge.html" target="_blank" rel="noopener">Alpha Pilot?</a> Let’s just say robotics and AI will need to learn animal instinct before it can compete with the best FPV pilots.</p>
+<p>In comparison, flying freestyle is about learning tricks and maneuver in various interesting location and spots. The goal is mostly about how each style transition smoothly to the next style. What is a good style is also subjective, but in general if you have a very good and precise control of how to fly a racing quad, you can transition to freestyle easily. Because the dynamics are similar, just the goals are different. </p>
+<p>I found that practicing racing skills are hard but more motivating than a non-targeted practice of freestyle tricks. This is especially true in a simulator (DRL or VelociDrone), where you don’t really have real-world immersion. In the real world, practically it’s easier to fly freestyle in most cases. Thus, I tend to view freestyle as a relaxation or exploration flying that you couldn’t do with racing. It’s likely that the better someone is at racing, the better someone could be at freestyle. </p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/fpv-drone-quadcopter-hobby-racing-freestyle-DRL-VRL-simulator/">fpv, drone, quadcopter, hobby, racing, freestyle, DRL, VRL, simulator</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2020/02/09/FPV-How-did-I-get-started/"><span>FPV - How did I get started?</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/02/09/FPV-How-did-I-get-started/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-02-08T16:35:48.000Z">
+          2020-02-09
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>If you are a drone pilot or have been working with drones, quadcopter or fixed wing, I am sure you have heard of FPV, and this post is not targeted towards those who are already in the hobby. With a quick search one can find a lot of tutorials, articles, and even complete training on how to become an FPV pilot. I am writing mostly to give another perspective on how did someone get started on it. Although, I have to state beforehand that my experience is neither unique nor it’s a good way to start with FPV.</p>
+<p>Before that I would like to provide a few information where you can seriously learn and understand the process of entering the hobby, building a racing / freestyle quad, and becoming an FPV pilot for racing, freestyle, or however you want to do it for. The sky and your hard-work is the only limit.</p>
+<ol>
+<li><a href="https://oscarliang.com/mini-quad-racing-guide" target="_blank" rel="noopener">OscarLiang</a>: My favorite tutorial and reviews site on anything FPV-related. The writings are very comprehensive and easy to understand compared to a few others who can be too technical, incomplete, too verbose, boring, or lacking in details.</li>
+<li><a href="https://www.propwashed.com/" target="_blank" rel="noopener">Propwashed</a>: Similar level of comprehensiveness to <a href="https://oscarliang.com/" target="_blank" rel="noopener">OscarLiang</a>. I do read specific articles such as <em>How to fly in Rate mode?</em>, <em>PID Tuning guide</em>, <em>LiPo battery guide</em>, and all the technical materials needed to fly a racing quad. But, there can be a few posts that could only be found in OscarLiang. Such as the review or benchmarks of various FPV gears and electronic components.</li>
+<li><a href="https://www.getfpv.com/learn/new-to-fpv-beginner/" target="_blank" rel="noopener">GetFPV</a>: Also similar to the above two sites. They might also have specific articles that I could not find elsewhere. The difference is GetFPV is also a shop for FPV gears or products. Although, I haven’t really compare them side-by-side. I found that OscarLiang reviewed more products and have more variation on the topics being discussed.</li>
+<li><a href="https://www.fpvknowitall.com/" target="_blank" rel="noopener">FPV Know-it-All</a>: Created by none other than Joshua Bardwell himself. I do enjoy his explanation of various topics in a friendly manner and easy to understand for beginners. Everyone should watch his <em>PID Tuning Masterclass</em>. But, he seem to be only producing videos, not written articles.</li>
+<li><a href="https://ethixltd.com/fpv/" target="_blank" rel="noopener">Ethix</a>: Steele Davis a.k.a <em>Mr. Steele</em> is a part of them. His videos and piloting skills are what I would consider as <em>crazy</em> but in a positive way. Although there’s a lot to be learned from his content, he doesn’t seem to write articles or provide a comprehensive guide for beginners. There’s however a few <a href="https://ethixltd.com/fpv/" target="_blank" rel="noopener">guidelines on FPV</a>.</li>
+<li><a href="https://www.airvuz.com/user/johnnyfpv" target="_blank" rel="noopener">Johnny FPV</a>: Johnny Schaer, he’s a racer and FPV pilot. I think he has one of the most spectacular videos ever made with FPV. He doesn’t have lots of tutorials or content for learning, but definitely you can learn his equipment setup, and even buy the same set of equipment. But, even though you do, it doesnt’t mean you can match his quality of work.</li>
+<li><a href="https://www.youtube.com/user/xLive2Fly" target="_blank" rel="noopener">Sozo</a>: The YouTube channel has videos mostly for long range expedition. It also has tutorials for FPV and racing pilot, accompanied with LiftOff simulator.</li>
+<li><a href="http://www.thejumperwire.com/" target="_blank" rel="noopener">TheJumperWire</a>: Not very specific to FPV, but more on electronics, quadcopter, and programming it. The author, Sean Kelly <a href="https://www.bitcraze.io/2020/01/crazyflie-bolt-fpv-meets-autonomy/" target="_blank" rel="noopener">has been working with bitcraze on Crazyflie</a> which is a famous programmable and open source quadcopter platform to do research on autonomous drone. I enjoy his series of articles on <a href="http://www.thejumperwire.com/science/lipo-characteristics-part-1-introduction/" target="_blank" rel="noopener">LiPo battery characteristics</a>.</li>
+<li><a href="https://thedroneracingleague.com/drl-sim-3/" target="_blank" rel="noopener">Drone Racing League</a>: A leading organization that promotes drone racing all over the world. They have racing competition. All you need to do is download the simulator, practice, and enter a race. If you just want to be a racer. This is where to start.</li>
+<li>There’s definitely more, but I can’t recall them.</li>
+</ol>
+<p>Also, I have to mention <a href="https://www.team-blacksheep.com/" target="_blank" rel="noopener">Team BlackSheep</a> and <a href="https://www.velocidrone.com/" target="_blank" rel="noopener">VelociDrone</a> where one is an FPV shop that has been a pioneer in the hobby, and VelociDrone which has been one of the go-to simulators to practice racing, freestyle, or online race. There are others such as LiftOff or DRL (Drone Racing League) simulator, but I haven’t personally used them, because I haven’t got the chance or a high-end gaming computer to also try them out.</p>
+<p>Next, how did I get started? As I have <a href="https://jessearmand.com/2020/01/05/2020-symmetrical-year/" target="_blank" rel="noopener">mentioned before</a>, I was brought into the hobby after I was involved with a project on autonomous drone with DJI Matrice 100 using <a href="https://www.ros.org/" target="_blank" rel="noopener">ROS</a>. Afterwards, I discovered FPV while searching for parts and components to custom build a quadcopter. But because I do not have a personal space or workbench to work with electronics, I decided not to build one for now, and instead bought a <a href="https://www.getfpv.com/learn/new-to-fpv/multirotor-drone-decision-flowchart/" target="_blank" rel="noopener">BNF</a> 3-inch quadcopter built by <a href="https://geprc.com/" target="_blank" rel="noopener">GEPRC</a> from <a href="https://sea.banggood.com/Geprc-GEP-CX-Cygnet-145mm-3-Inch-RC-FPV-Racing-Drone-Stable-F4-20A-48CH-RunCam-Split-Mini-2-1080P-HD-p-1380268.html?rmmds=myorder&amp;ID=529998&amp;cur_warehouse=CN" target="_blank" rel="noopener">Banggood</a>.</p>
+<p>A 3-inch quadcopter is a good balance between being able to fly freestyle, racing and but not throwing yourself immediately to higher-powered 5-inch or 7-inch ones which will require larger capacity LiPo batteries with more weight, size, and more experience on how to handle its speed and range. The bigger quads (although they are still mini-quad) can give a false sense of inspiration, and then you started to take more risks without having a good sense of how it flies, how it’s being tuned, and how to manage all aspects of controlling it.</p>
+<p>If I could restart I would start with micro quads that are often referred to as <em>Whoops</em> such as the Emax TinyHawk, Eachine Trashcan, Beta65 / 75 / 85 from BetaFPV. They are good for flying indoors, and getting a feel of flying FPV without flight assistance from sensors such as GPS or <em>Optical Flow</em> to hold its position for hovering. But, I don’t want to spend extra money unless if I actually have a chance to fly indoors — which is unlikely as indoor space tend to be occupied by people — unless if I join a race. Although, they are okay for outdoors too, I’d rather use a <em>Toothpick</em>, 3-inch or larger.</p>
+<p>It’s recommended to practice with simulator before flying the real quad, but only after a few flights with my first 3-inch, then I started to really feel how real-life flying is compared to simulator. Aside from physics, real flying require more awareness of the environment, and the configuration of the hardware or flight controller (BetaFlight):</p>
+<ul>
+<li>LiPo battery characteristics, balanced charging, discharged, what is storage voltage, etc. is very important</li>
+<li>Electronics and how to recognize symptoms when things are broken (motors, capacitors blowed up, short circuit)</li>
+<li>Basics of Radio Frequency Communication</li>
+<li>What’s the difference between TBS transceiver vs FrSky</li>
+<li>Why do some people need long range transceiver at 900 MHz</li>
+<li>What kind of antenna to use (Pagoda, Leaf, RHCP or LHCP polarized, SMA or RP-SMA connector)</li>
+<li>FPV frequency selection on video transmitter (VTX), which channel, band, and transmission power numbers and how it’s being regulated. In Singapore the limit is 100mW, otherwise you would need permission.</li>
+<li>Without watching the recorded video of my real flight — VelociDrone doesn’t do recording automatically — I wouldn’t be aware of my weaknesses.</li>
+<li>Throttle management is different on a 3-inch compared to 5-inch. With smaller propellers I have to make sure that throttle doesn’t drop for too long at low altitude, otherwise the quad can easily drop to the ground and flip.</li>
+<li>VelociDrone’s smallest mini quad is a 4-inch. Although they have micro quads, it’s still not a 2-3 inch quad.</li>
+<li>The list doesn’t stop here while on the simulator you can simply ignore regulation, hardware, electronics, and focus on flying.</li>
+</ul>
+<p>I realized that having an understanding of the fundamentals of building a quadcopter does help with developing an interest on FPV. But, having a good understanding or even mastery of the technology doesn’t always translate to an interest in racing or freestyle flying. First and foremost FPV requires <strong>time</strong>, a certain personality trait and adventurous mindset. Because there is not much rationale behind practicing hard to learn the basics of high speed racing and acrobatic movements other than a sense of adventure and curiosity. Not to mention understanding the regulation of <em>Unmanned Aerial Vehicle</em> in countries you’re flying in.</p>
+<p>Some people are either simply lazy (it does require hard work), or their lifestyle doesn’t lead them into that direction. With all the news of people landing drones at the airport and spying at people’s home, it discouraged people from understanding the various aspects of the hobby whether it’s quadcopter, FPV, or fixed wing. The result is the activity tend to be associated with pranks and immaturity, while in reality the hobby has a lot more variation in it other than people who bought drones for photography or videography.</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/fpv-drone-quadcopter-hobby-radio-racing-freestyle/">fpv, drone, quadcopter, hobby, radio, racing, freestyle</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2020/01/05/2020-symmetrical-year/"><span>2020: symmetrical year</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/01/05/2020-symmetrical-year/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-01-05T01:16:40.000Z">
+          2020-01-05
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>It has been a long time since I wrote anything, and I have decided that I had to at least once in 2020. As it’s the only year in my lifetime that is symmetrical. Do numbers mean anything? Probably yes or no, either way I have recently worked on more robotics related software than a consumer app on iOS. I still wrote an iOS app to interface with a backend running on a headless computer such as Raspberry Pi, Intel NUC, NVIDIA Jetson or it can be any kind of computer. I have to admit there aren’t many nice solution out there. Because most robotics software came out from research lab, and it doesn’t often consider smartphone as their frontend. There isn’t a lot of software engineers working in the robotics industry apparently for a valid reason.</p>
+<p>If we talk about robotics, probably an arm manipulator, roomba-like differential drive, humanoid, or a dog robot came into our imagination. But, those are not the only robot. A “drone” can be a robot. A car could also be a robot. The only element needed to drive this is sequence of commands to achieve semi or fully autonomous behaviour, without us controlling every aspect of their movement.</p>
+<p>Now, I thought robotics is cool. Yes, it’s cool to have a computer to move on its own. But, when we delegate our responsibilities to autonomous robots, our job is done. We don’t consider them as exciting anymore. Who would be excited with a washing machine for an example? Unless a robot could interact with us like a human or animal does, it’s boring.</p>
+<p>As I have worked with drones for a few months, another world has revealed itself to me. The first drone I have touched is a DJI Matrice 100. It’s an amazing piece of equipment, as I never worked with an aircraft before. However, after a while as any other piece of equipment, it’s not something that I get excited over.</p>
+<p>I guess the main reason is the difficulty with which to use it on various activities. It’s too large, noisy, and although it’s programmable, how far can we get with it without years of work, to make it on par to the latest and significantly cheaper drone on the market?</p>
+<p>Then, I have also tried the newer DJI Mavic 2 Pro. It’s much better, more stable, and easier to control. It does what it’s designed to do (flying, taking photos and videos), but it’s not an open platform where you can replace the hardware or software. But, just last year <a href="https://www.skydio.com/" target="_blank" rel="noopener">Skydio 2</a> was released. It has far better autonomous flying capabilities, and for some reason they’d rather state that it’s using NVIDIA Jetson TX2 as a computer. This is not the case with Mavic. Though DJI is using an Ambarella vision processor, they don’t advertise it anywhere in their marketing materials. Skydio is another drone targeted at Mavic’s customer base, and it’s also not a programmable drone, though it might be in the future. I assume any product equipped with NVIDIA Jetson series board need to provide some attribution. This is also the case with DJI Matrice 2xx series.</p>
+<p>Now, if I need a fully autonomous drone or I prefer to call it quadcopter — as it’s a multirotor with 4 motors driving its propellers — the only way is by building it myself. But, while I have a thought of doing that, I found that quite a few of DIY builders are doing it for racing or freestyle flying with an FPV (First Person View) goggles. I found this activity to be very active and growing, and you can search on the internet to find various setup of racing / freestyle quad with various configuration. It’s also an art in flying in remote areas, nature, abandoned space, and video shooting at its best.</p>
+<p>I could consider that a racing / freestyle quad and FPV goggles has pushed the miniaturization in electronics and innovation in radio transmission technology which an autonomous drone project has not achieved so far or they are moving at a slower rate. The differentiating factor is the kind of people or flyers that used them. An autonomous drone require heavy computation, and there aren’t a lot of hobbyist in programming and electronics, while an FPV hobby on the other hand is more appealing to anyone who is seeking an adrenaline rush. Anyone with little background in electronics and software can enter the hobby with persistent practice. There’s always those who seek thrill, thus there are always demands. It’s not very hard to manufacture electronics that could drive motors aggressively. But, it’s very hard to manufacture electronics that can simultaneously drive motors and do a lot of heavy matrix calculations in real time, in other words to put a GPU on a mini or micro quadcopter.</p>
+<p>The other side of casual user is probably better served with a stable drone that flies by itself, which is so far only Skydio that could achieve this. Any Mavic series so far is relatively okay at obstacle avoidance but it’s very limited, you need to fly it at a certain height to track you. Also you can’t send Mavic for an autonomous mission without good GPS signal. Because in order to move itself without GPS it needs a point of reference. At the moment it’s just the person flying it, another person, or a car. While ideally it should build a map of its environment from its own motion and visual processing a.k.a SLAM, and that’s what Skydio is doing so far and why it has an amazing tracking and obstacle avoidance capability.</p>
+<p>In the case of aggressive quadrotor movement such as drone racing, it might be possible in the future to have it in the form of pilot assistance system. But instead of helping to avoid obstacles — although that would be good too — imagine that a pilot could learn the <strong>optimized</strong> flight characteristics of a racing / freestyle quad as a feedback system to the manual flight in <code>Acro</code> or <code>Rate</code> mode via the remote control. With digital HD FPV system such as the latest one from DJI, this feedback information can be provided in real time via the goggles as well. Combined with a simulator system, professional pilot datasets, and flight logs, a pilot at any level is able to improve him / herself via this training-in-the-loop system.</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/robotics-fpv-drone-quadcopter-engineering-software/">robotics, fpv, drone, quadcopter, engineering, software</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2016/07/19/rewind-view-controller-states-observables/"><span>Rewind view controller states (observables)</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2016/07/19/rewind-view-controller-states-observables/" rel="bookmark">
+        <time class="entry-date published" datetime="2016-07-19T15:54:09.000Z">
+          2016-07-19
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>A pattern that was not immediately obvious when you began to use an <a href="https://github.com/ReactiveX/RxSwift" target="_blank" rel="noopener">Rx</a>-based view controller setup is to undo/reset all of the observables that have been subscribed to after it re-appears.</p>
+<p>This is a common behaviour in a navigation controller stack of view controllers. We might have various controls in a view controller, it could be a text field, text view, or anything that you might want to return to from the next controller in a navigation stack.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"><span class="keyword">import</span> RxSwift</span><br><span class="line"><span class="keyword">import</span> RxCocoa</span><br><span class="line"></span><br><span class="line"><span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">FormViewController</span>: <span class="title">UIViewController</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> disposeBag: <span class="type">DisposeBag</span> = <span class="type">DisposeBag</span>()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> completed: <span class="type">PublishSubject</span>&lt;<span class="type">Void</span>&gt;()</span><br><span class="line"></span><br><span class="line">    <span class="built_in">lazy</span> <span class="keyword">var</span> textField: <span class="type">UITextField</span> = &#123;</span><br><span class="line">        <span class="keyword">let</span> textField = <span class="type">UITextField</span>()</span><br><span class="line">        textField.autocorrectionType = .<span class="type">No</span></span><br><span class="line">        textField.autocapitalizationType = .<span class="type">None</span></span><br><span class="line">        textField.returnKeyType = .<span class="type">Done</span></span><br><span class="line">        <span class="keyword">return</span> textField</span><br><span class="line">    &#125;()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">viewDidLoad</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.viewDidLoad()</span><br><span class="line"></span><br><span class="line">        <span class="comment">// We indicate that a certain action should be completed,</span></span><br><span class="line">        <span class="comment">// once the text field's text reaches a certain length</span></span><br><span class="line">        textField.rx_text</span><br><span class="line">            .asObservable()</span><br><span class="line">            .subscribeNext &#123; text <span class="keyword">in</span></span><br><span class="line">                <span class="keyword">if</span> text.length &gt; <span class="number">6</span> &#123; </span><br><span class="line">                    completed.onCompleted()</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            .addDisposableTo(disposeBag)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">viewWillAppear</span><span class="params">(animated: Bool)</span></span> &#123; </span><br><span class="line">        <span class="keyword">super</span>.viewWillAppear(animated)</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Observe when returning</span></span><br><span class="line">        completed = <span class="type">PublishSubject</span>&lt;<span class="type">Void</span>&gt;()</span><br><span class="line">        completed</span><br><span class="line">            .subscribeCompleted &#123; </span><br><span class="line">            <span class="comment">// A subscribed action is completed</span></span><br><span class="line">        &#125;</span><br><span class="line">        .addDisposableTo(disposeBag)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">viewWillDisappear</span><span class="params">(animated: Bool)</span></span> &#123; </span><br><span class="line">        <span class="keyword">super</span>.viewWillDisappear(animated)</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Clean up all observables</span></span><br><span class="line">        disposeBag = <span class="type">DisposeBag</span>()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Typically, we would want to do a certain action in a view controller, that could be observed, and it should be known when does it complete. One example is network request, but the above example is simplified to illustrate the idea of running an action that is triggered by an observed event (text field event). <a href="http://reactivex.io/documentation/subject.html" target="_blank" rel="noopener">PublishSubject</a> is a common example to represent an action subject that can be subscribed to and could subscribe to an observable.</p>
+<p>In the snippet above, on view appearance, the action is being reset, and re-subscribed, while on view disappearance, the disposeBag is being re-created. Once it returns to this view controller from the navigation stack it will have the completed subject re-created and re-subscribed.</p>
+<p>Without the above setup, a completed action remains completed and it will not emit anymore items that is being observed.</p>
+<p>To think about it a little bit further, before Rx I often do not have an idea on how to “replay” a certain action within scenes of view controllers. Traditionally this can be done by re-creating whatever it’s an object responsible for such action (e.g. NSURLRequest).</p>
+<p>It can always be done traditionally without Rx, but in that way there doesn’t seem to be a generalisation of idea in how to represent an action that can be anything.</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/swift-ios-rxswift-rxcocoa/">swift, ios, rxswift, rxcocoa</a>
+    </span>
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2016/05/14/revisiting-size-classes/"><span>Revisiting Size Classes</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2016/05/14/revisiting-size-classes/" rel="bookmark">
+        <time class="entry-date published" datetime="2016-05-13T18:04:29.000Z">
+          2016-05-14
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>Articles on iOS size classes never went beyond the ideal that we have to think in terms of Any, Regular, Compact Horizontal or Vertical size classes for adaptive layout, instead of pixels and devices screen sizes.</p>
+<p>Ever since size classes was introduced in iOS 8, I have always wondered, why do iPhone 4s, 5, and 6 are all under Compact Horizontal and Regular Vertical size classes?</p>
+<p>While in reality they have different dimensions, and during design phase, we have to think about the dimensions of views and their subviews, together with the distances between them due to these varying screen sizes.</p>
+<p>We could of course declare auto layout constraints programmatically with a multiplier based on screen width or height. But, from what I understood size classes are supposed to move us forward from this way of thinking towards designing layout specifically just for the abstractions of them. Until I encountered one article that describes my confusion on size classes:</p>
+<p><a href="http://blog.blackfrog.com/2014/06/27/size-classes-close-but-not-quite/" target="_blank" rel="noopener">Size Classes - Close, but Not Quite</a><br>By Kevin Packard <a href="http://twitter.com/kevinpackard" target="_blank" rel="noopener">@kevinpackard</a> One Storyboard to Rule Them All At WWDC 14, Apple introduced Unified Storyboards and Size<br><a href="http://blog.blackfrog.com" target="_blank" rel="noopener">blog.blackfrog.com</a></p>
+<p><strong>Note</strong> that, the above article was posted about 2 years ago.</p>
+<p>Exactly, if a designer should consider how an iPhone 4s is way shorter than an iPhone 6, resulting in individual layout design for each iPhone 4s, 5, 6, 6 plus. Then, aren’t we still doing what we are doing before size classes were introduced?</p>
+<p>Well, I hope this will change in WWDC 2016.</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/ios-auto-layout/">ios, auto-layout</a>
+    </span>
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2016/03/29/moving-on/"><span>Moving On</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2016/03/29/moving-on/" rel="bookmark">
+        <time class="entry-date published" datetime="2016-03-29T00:09:45.000Z">
+          2016-03-29
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>After about 4.5 years of working primarily as an iOS Software Engineer at <a href="http://2359media.com/" target="_blank" rel="noopener">2359 Media</a> — including server side development of <a href="http://www.voicepingapp.com/" target="_blank" rel="noopener">VoicePing</a> with node.js that I have been doing for a year — I am finally ready to move on to my next challenge to work as a Lead iOS Developer at <a href="https://www.gotouche.com" target="_blank" rel="noopener">Touché</a> Singapore.</p>
+<p><a href="https://www.gotouche.com" target="_blank" rel="noopener">Touché</a> core product is a seamless payment system together with a device using biometric (fingerprint) as an identity system. It’s something that I have never explored before, and it’s only recently that fingerprint based identity started to appear on mainstream devices such as iPhone (Touch ID) and then Android. Thus, it’s intriguing that they’ve managed to produced a standalone device and to continue pushing in that direction.</p>
+<p>Working in a payment industry is something that has been in the back of my mind for quite a while, though I never got a chance to really understand how all the system works.</p>
+<p>In relation to that, I have been increasingly comfortable with cards, digital, or online payment, and I hope someday cash and coins are no longer necessary.</p>
+<p>This reminded me of the time when I visited Sweden (Uppsala, and sometimes Stockholm) for 3 months around 6 years ago, and that was the first time that I had witnessed for myself the widespread usage of cards, as opposed to cash. As can be read from <a href="http://www.nytimes.com/2015/12/27/business/international/in-sweden-a-cash-free-future-nears.html?_r=0" target="_blank" rel="noopener">here</a> as well, which ignited my brain cells, though these thoughts have pretty much stayed there and ignored for the past 4 years.</p>
+<p>On the contrary, after reading the Preface of bitcoin book from Princeton course, I have realised that the major advantage of using cash is the anonymity of transactions, and it’s independent of third party verification such as payment processors (Visa, MasterCard, or Banks, etc.).</p>
+<p>I agree that these are the properties that don’t exist in a cashless system. But, we have moved on from a barter system, to cash, credit cards, and NFCs on smartphones, with a bit of sacrifice on our privacy and security. These made transactions much easier, and now it’s easier than ever to transfer money and purchase goods across the world. So, in the end the progress is really worth something.</p>
+<p>Back to the topic of my career move, I would mostly still be doing mobile development on the iOS side, which is still exciting given the recent movements by Apple (Swift, open source, etc.), but in a new industry, a <a href="https://www.gotouche.com/about-us/" target="_blank" rel="noopener">new team</a>, and a new focus.</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/career-moving-on-payments/">career, moving-on, payments</a>
+    </span>
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2015/10/26/playing-around-with-data-science/"><span>Playing around with Data Science</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2015/10/26/playing-around-with-data-science/" rel="bookmark">
+        <time class="entry-date published" datetime="2015-10-26T05:21:45.000Z">
+          2015-10-26
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>After a few influences here and there from colleagues, and how I kept hearing this buzzword time and time again. I am finally curious to understand what is data science all about.</p>
+<p>I started with an online course from <a href="https://www.coursera.org/user/i/394c3bbb467e444d4cb349ad6217d8e6" target="_blank" rel="noopener">Coursera</a> in my spare time as an introduction, then I’m currently in the process of finishing the R programming course at the end of October.</p>
+<p>Overall, as a long time programmer, I consider the level of difficulty of the R programming assignments as easy. You don’t need to spend days to solve one of them. Mostly, it can be done in an hour or more within a day. Moreover, the course team are very generous in providing examples, and all of the lecture materials are very organized.</p>
+<p>Though, it’s likely to get harder if I proceed to the next course in the data science specialization track. Which, I probably will. But before that, I’ve accidentally discovered <a href="http://datascienceatthecommandline.com/" target="_blank" rel="noopener">data science on the command line</a> by <a href="https://github.com/jeroenjanssens" target="_blank" rel="noopener">Jeroen Janssens</a> which introduced a set of <a href="http://datasciencetoolbox.org/" target="_blank" rel="noopener">toolbox</a> that I perceived as a more complete tooling than just utilizing R.</p>
+<p>I generally believe that programming toolsets should not be confined to one environment, one editor, with their own custom interfaces or protocols written by a vendor that is not extensible or interoperable with another toolset. Although this is not the case with R, but I have seen other programming tools — which I can’t recall right now — that are built this way.</p>
+<p>What about Python for data science? Yes, Python is a general purpose programming language, but I assume that the data science community are more productive within the R programming environment. Proven by how Johns Hopkins University are using R to teach data science. It would take more learning and time for those with little programming experience to solve these problems using Python.</p>
+<p>The data scientists have done a lot for the R development tools. I have searched and peeked a bit into a few of the stuff that they had built. Though, honestly I haven’t explored what kind of tools or libraries in Python that is made for data science.</p>
+<p>So, I’m thinking along the lines of using what is already been done on R, and we should be able to interface with it from a different programming environment.</p>
+<p>For example:<br>An interactive application (desktop, web, mobile, whatever) that continuosly records data from user input, or other sources which is then formatted into CSV or data frames which is the data type that R usually interacts with.<br>These data should be fed into R programs that are being specifically written to do a unit of calculation. The raw data of the result should be sent back to the application which are optimized for user interface and visualization purpose.</p>
+<p>We need this interfacing because I’m not sure that R tools (even though it has Shiny and other plotting libraries) are complete or well developed enough to be able to do advanced UI or visualization, it’s not their focus.<br>Regardless, it’s still very early for me to tell whether it’s even better to remove R from this sort of system. Because it does seem like it’s just a tool for data scientist, it’s not something that you’ll use for an automated stand alone performance critical system that will process and compute huge amounts of data.</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/data-science/">data-science</a>
+    </span>
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2015/07/14/voiceping/"><span>VoicePing</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2015/07/14/voiceping/" rel="bookmark">
+        <time class="entry-date published" datetime="2015-07-13T17:59:22.000Z">
+          2015-07-14
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>Lesson learned while building <a href="https://www.linkedin.com/pulse/my-new-startup-voiceping-available-google-play-store-zhou-wenhan" target="_blank" rel="noopener">VoicePing</a>.</p>
+<p>It’s neither about pursuing the big ideas nor technical challenges associated to building a highly mutable state machine with multitude of side effects.</p>
+<p>Not even about achieving the elegant architecture of cooperating microservices which would scale to billion clients.</p>
+<p>Yes, at some point the above big goals will seem to be the overall purpose or the end result of a real-time system. But right now:</p>
+<p>80% are about making sure things are working as expected at the right time for:</p>
+<ol>
+<li>Consumers of the services (mobile clients).</li>
+<li>End users of the mobile clients.</li>
+</ol>
+<p>20% are about making sure every little part of the software should be written and configured in the most understandable way, with as little overhead as possible in terms of memory or processing resources.</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/real-time/">real-time</a>
+    </span>
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2013/06/13/more-http-server-benchmark/"><span>More HTTP server benchmark</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2013/06/13/more-http-server-benchmark/" rel="bookmark">
+        <time class="entry-date published" datetime="2013-06-12T16:00:00.000Z">
+          2013-06-13
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>Following from my last <a href="http://jessearmand.github.io/http-server-benchmark/2013/06/11/im-sold-with-golang/">post</a> on benchmarking hello world http server on various platforms, I continued with increasing the number of requests and concurrency. In addition, I added <a href="http://www.scalatra.org/" target="_blank" rel="noopener">scalatra</a>, <a href="http://www.playframework.com/" target="_blank" rel="noopener">play</a>, and <a href="https://github.com/mopub/greenlet-tornado" target="_blank" rel="noopener">greenlet tornado</a> to the list.</p>
+<p>What is greenlet? To make it short, it’s just like goroutine in golang. What’s goroutine? Read about it <a href="http://www.golang-book.com/10" target="_blank" rel="noopener">here</a>.</p>
+<p>This time, I excluded node.js, twisted, and eventmachine from the list, because apache bench could not finish the benchmark at 100,000 number of requests with 100 multiple requests at a time.</p>
+<p>node.js and eventmachine could still perform well at 15000 requests with 100 multiple requests, and the results of both don’t have a significant difference compared to the last time I tested it. Beyond that, the test was aborted after 10 failures, with the same error:</p>
+<pre><code>apr_socket_connect(): Operation already in progress (37)
+</code></pre><p>I have also made an upgrade on ab executable to Version 2.3 Revision 1430300. This could be built from the latest httpd source code at version 2.4.4.</p>
+<p>That being said, I may try to find out what are the problems in my test setup — Mac OS X 10.8.4, Retina MacBook Pro, Mid 2012 with Quad Core i7 at 2.3 GHz — that fails apache bench to finish it for node.js, twisted, and eventmachine. I figured that to do a full-scale benchmark with apache bench, it needs to be run on a Linux server.</p>
+<p>The apache bench command that I was using:</p>
+<pre><code>% ab -r -k -n 100000 -c 100 -e ~/Documents/each_platform_results.csv http://localhost:port/
+</code></pre><p>The source code for greenlet with tornado:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tornado.httpserver</span><br><span class="line"><span class="keyword">import</span> tornado.web</span><br><span class="line"><span class="keyword">from</span> greenlet_tornado <span class="keyword">import</span> greenlet_asynchronous, greenlet_fetch</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MainHandler</span><span class="params">(tornado.web.RequestHandler)</span>:</span></span><br><span class="line"><span class="meta">    @greenlet_asynchronous</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.write(<span class="string">"Hello World!"</span>)</span><br><span class="line"></span><br><span class="line">application = tornado.web.Application([</span><br><span class="line">    (<span class="string">r"/"</span>, MainHandler),</span><br><span class="line">])</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    http_server = tornado.httpserver.HTTPServer(application)</span><br><span class="line">    http_server.listen(<span class="number">8001</span>)</span><br><span class="line">    print(<span class="string">"Tornado listening at 8001"</span>)</span><br><span class="line">    tornado.ioloop.IOLoop.instance().start()</span><br></pre></td></tr></table></figure>
+<p>As you can see, there’s not much difference except for the <code>@greenlet_asynchronous</code> decorator.</p>
+<p>The result is not that different either:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">Server Software:        TornadoServer/3.0.2</span><br><span class="line">Server Hostname:        0.0.0.0</span><br><span class="line">Server Port:            8001</span><br><span class="line"></span><br><span class="line">Document Path:          /</span><br><span class="line">Document Length:        12 bytes</span><br><span class="line"></span><br><span class="line">Concurrency Level:      100</span><br><span class="line">Time taken for tests:   32.202 seconds</span><br><span class="line">Complete requests:      100000</span><br><span class="line">Failed requests:        0</span><br><span class="line">Write errors:           0</span><br><span class="line">Keep-Alive requests:    100000</span><br><span class="line">Total transferred:      23100000 bytes</span><br><span class="line">HTML transferred:       1200000 bytes</span><br><span class="line">Requests per second:    3105.36 [#/sec] (mean)</span><br><span class="line">Time per request:       32.202 [ms] (mean)</span><br><span class="line">Time per request:       0.322 [ms] (mean, across all concurrent requests)</span><br><span class="line">Transfer rate:          700.52 [Kbytes/sec] received</span><br><span class="line"></span><br><span class="line">Connection Times (ms)</span><br><span class="line">              min  mean[+/-sd] median   max</span><br><span class="line">Connect:        0    0   0.1      0       5</span><br><span class="line">Processing:     6   32  10.7     29     100</span><br><span class="line">Waiting:        6   32  10.7     29     100</span><br><span class="line">Total:         10   32  10.7     29     100</span><br><span class="line"></span><br><span class="line">Percentage of the requests served within a certain time (ms)</span><br><span class="line">  50%     29</span><br><span class="line">  66%     29</span><br><span class="line">  75%     30</span><br><span class="line">  80%     30</span><br><span class="line">  90%     51</span><br><span class="line">  95%     61</span><br><span class="line">  98%     63</span><br><span class="line">  99%     68</span><br><span class="line"> 100%    100 (longest request)</span><br></pre></td></tr></table></figure></p>
+<p>Actually, tornado without greenlet is slightly faster by 0.01 ms.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">Server Software:        TornadoServer/3.0.2</span><br><span class="line">Server Hostname:        0.0.0.0</span><br><span class="line">Server Port:            8001</span><br><span class="line"></span><br><span class="line">Document Path:          /</span><br><span class="line">Document Length:        12 bytes</span><br><span class="line"></span><br><span class="line">Concurrency Level:      100</span><br><span class="line">Time taken for tests:   31.168 seconds</span><br><span class="line">Complete requests:      100000</span><br><span class="line">Failed requests:        0</span><br><span class="line">Write errors:           0</span><br><span class="line">Keep-Alive requests:    100000</span><br><span class="line">Total transferred:      23100000 bytes</span><br><span class="line">HTML transferred:       1200000 bytes</span><br><span class="line">Requests per second:    3208.39 [#/sec] (mean)</span><br><span class="line">Time per request:       31.168 [ms] (mean)</span><br><span class="line">Time per request:       0.312 [ms] (mean, across all concurrent requests)</span><br><span class="line">Transfer rate:          723.77 [Kbytes/sec] received</span><br><span class="line"></span><br><span class="line">Connection Times (ms)</span><br><span class="line">              min  mean[+/-sd] median   max</span><br><span class="line">Connect:        0    0   0.1      0       4</span><br><span class="line">Processing:     7   31  11.0     27     108</span><br><span class="line">Waiting:        7   31  11.0     27     108</span><br><span class="line">Total:          8   31  11.0     27     108</span><br><span class="line"></span><br><span class="line">Percentage of the requests served within a certain time (ms)</span><br><span class="line">  50%     27</span><br><span class="line">  66%     28</span><br><span class="line">  75%     28</span><br><span class="line">  80%     29</span><br><span class="line">  90%     50</span><br><span class="line">  95%     59</span><br><span class="line">  98%     63</span><br><span class="line">  99%     73</span><br><span class="line"> 100%    108 (longest request)</span><br></pre></td></tr></table></figure></p>
+<p>Next up, Scalatra which is a <a href="http://www.sinatrarb.com" target="_blank" rel="noopener">sinatra</a> inspired web framework written in <a href="http://www.scala-lang.org" target="_blank" rel="noopener">scala</a>, but it takes much longer to setup compared to its predecessor.</p>
+<p>Here’s the code:</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.jessearmand.helloscala</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.scalatra._</span><br><span class="line"><span class="keyword">import</span> scalate.<span class="type">ScalateSupport</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyScalatraServlet</span> <span class="keyword">extends</span> <span class="title">HelloScalaAppStack</span> </span>&#123;</span><br><span class="line">  get(<span class="string">"/"</span>) &#123;</span><br><span class="line">    <span class="string">"Hello World."</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Yes, that simple! Once you set it up with some effort, if you never done any Scala programming.</p>
+<p>How does it perform? Roughly, it’s twice as fast as python’s tornado.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">Server Software:        Jetty(8.1.8.v20121106)</span><br><span class="line">Server Hostname:        0.0.0.0</span><br><span class="line">Server Port:            8080</span><br><span class="line"></span><br><span class="line">Document Path:          /</span><br><span class="line">Document Length:        12 bytes</span><br><span class="line"></span><br><span class="line">Concurrency Level:      100</span><br><span class="line">Time taken for tests:   16.332 seconds</span><br><span class="line">Complete requests:      100000</span><br><span class="line">Failed requests:        0</span><br><span class="line">Write errors:           0</span><br><span class="line">Keep-Alive requests:    100000</span><br><span class="line">Total transferred:      14700000 bytes</span><br><span class="line">HTML transferred:       1200000 bytes</span><br><span class="line">Requests per second:    6122.82 [#/sec] (mean)</span><br><span class="line">Time per request:       16.332 [ms] (mean)</span><br><span class="line">Time per request:       0.163 [ms] (mean, across all concurrent requests)</span><br><span class="line">Transfer rate:          878.96 [Kbytes/sec] received</span><br><span class="line"></span><br><span class="line">Connection Times (ms)</span><br><span class="line">              min  mean[+/-sd] median   max</span><br><span class="line">Connect:        0    0   0.1      0       4</span><br><span class="line">Processing:     0   16   4.2     16      79</span><br><span class="line">Waiting:        0   16   4.2     16      79</span><br><span class="line">Total:          0   16   4.2     16      80</span><br><span class="line"></span><br><span class="line">Percentage of the requests served within a certain time (ms)</span><br><span class="line">  50%     16</span><br><span class="line">  66%     17</span><br><span class="line">  75%     18</span><br><span class="line">  80%     19</span><br><span class="line">  90%     21</span><br><span class="line">  95%     23</span><br><span class="line">  98%     26</span><br><span class="line">  99%     29</span><br><span class="line"> 100%     80 (longest request)</span><br></pre></td></tr></table></figure>
+<p>Now, let’s try Play framework which I guess is the best framework written in Scala to build a web application with non-blocking IO.</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> controllers</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> play.api._</span><br><span class="line"><span class="keyword">import</span> play.api.mvc._</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">object</span> <span class="title">Application</span> <span class="keyword">extends</span> <span class="title">Controller</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">index</span> </span>= <span class="type">Action</span> &#123;</span><br><span class="line">    <span class="type">Ok</span>(<span class="string">"Hello World!"</span>)</span><br><span class="line">    <span class="comment">// Ok(views.html.index("Your new application is ready."))</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Note how I commented out the code responsible for rendering the default index.html view. This is only because I want a pure “Hello World” comparison. Although, I do understand that it’s not a comprehensive way to benchmark web apps for what it can do in various other cases. Read <a href="http://blog.dustinjuliano.com/2013/05/report-comparative-benchmark-of-nginx.html" target="_blank" rel="noopener">here</a> for a good example of doing this.</p>
+<p>Result on initial launch of the app:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">Server Software:</span><br><span class="line">Server Hostname:        0.0.0.0</span><br><span class="line">Server Port:            9000</span><br><span class="line"></span><br><span class="line">Document Path:          /</span><br><span class="line">Document Length:        12 bytes</span><br><span class="line"></span><br><span class="line">Concurrency Level:      100</span><br><span class="line">Time taken for tests:   6.425 seconds</span><br><span class="line">Complete requests:      100000</span><br><span class="line">Failed requests:        10</span><br><span class="line">   (Connect: 5, Receive: 5, Length: 0, Exceptions: 0)</span><br><span class="line">Write errors:           0</span><br><span class="line">Keep-Alive requests:    99995</span><br><span class="line">Total transferred:      11599420 bytes</span><br><span class="line">HTML transferred:       1199940 bytes</span><br><span class="line">Requests per second:    15563.80 [#/sec] (mean)</span><br><span class="line">Time per request:       6.425 [ms] (mean)</span><br><span class="line">Time per request:       0.064 [ms] (mean, across all concurrent requests)</span><br><span class="line">Transfer rate:          1763.00 [Kbytes/sec] received</span><br><span class="line"></span><br><span class="line">Connection Times (ms)</span><br><span class="line">              min  mean[+/-sd] median   max</span><br><span class="line">Connect:        0    0   0.9      0     105</span><br><span class="line">Processing:     2    6   4.9      5      96</span><br><span class="line">Waiting:        0    6   4.9      5      96</span><br><span class="line">Total:          2    6   5.1      5     157</span><br><span class="line"></span><br><span class="line">Percentage of the requests served within a certain time (ms)</span><br><span class="line">  50%      5</span><br><span class="line">  66%      6</span><br><span class="line">  75%      7</span><br><span class="line">  80%      8</span><br><span class="line">  90%     11</span><br><span class="line">  95%     15</span><br><span class="line">  98%     22</span><br><span class="line">  99%     27</span><br><span class="line"> 100%    157 (longest request)</span><br></pre></td></tr></table></figure>
+<p>Then, after the first benchmark:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">Server Software:</span><br><span class="line">Server Hostname:        0.0.0.0</span><br><span class="line">Server Port:            9000</span><br><span class="line"></span><br><span class="line">Document Path:          /</span><br><span class="line">Document Length:        12 bytes</span><br><span class="line"></span><br><span class="line">Concurrency Level:      100</span><br><span class="line">Time taken for tests:   3.933 seconds</span><br><span class="line">Complete requests:      100000</span><br><span class="line">Failed requests:        0</span><br><span class="line">Write errors:           0</span><br><span class="line">Keep-Alive requests:    100000</span><br><span class="line">Total transferred:      11600000 bytes</span><br><span class="line">HTML transferred:       1200000 bytes</span><br><span class="line">Requests per second:    25422.96 [#/sec] (mean)</span><br><span class="line">Time per request:       3.933 [ms] (mean)</span><br><span class="line">Time per request:       0.039 [ms] (mean, across all concurrent requests)</span><br><span class="line">Transfer rate:          2879.94 [Kbytes/sec] received</span><br><span class="line"></span><br><span class="line">Connection Times (ms)</span><br><span class="line">              min  mean[+/-sd] median   max</span><br><span class="line">Connect:        0    0   0.1      0       4</span><br><span class="line">Processing:     2    4   1.2      3      13</span><br><span class="line">Waiting:        2    4   1.2      3      13</span><br><span class="line">Total:          2    4   1.3      3      16</span><br><span class="line"></span><br><span class="line">Percentage of the requests served within a certain time (ms)</span><br><span class="line">  50%      3</span><br><span class="line">  66%      4</span><br><span class="line">  75%      4</span><br><span class="line">  80%      5</span><br><span class="line">  90%      6</span><br><span class="line">  95%      7</span><br><span class="line">  98%      7</span><br><span class="line">  99%      8</span><br><span class="line"> 100%     16 (longest request)</span><br></pre></td></tr></table></figure>
+<p>It seems Play framework takes some time from the initial launch to achieve some kind of a “steady state”.</p>
+<p>Last, let’s do some benchmark with go lang again. This time, I didn’t set GOMAXPROCS which sets the maximum number of CPUs that can be executing simultaneously. Thus, I let it use a default value that I don’t know of.</p>
+<p>Result:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">Server Software:</span><br><span class="line">Server Hostname:        127.0.0.1</span><br><span class="line">Server Port:            3000</span><br><span class="line"></span><br><span class="line">Document Path:          /</span><br><span class="line">Document Length:        12 bytes</span><br><span class="line"></span><br><span class="line">Concurrency Level:      100</span><br><span class="line">Time taken for tests:   2.559 seconds</span><br><span class="line">Complete requests:      100000</span><br><span class="line">Failed requests:        0</span><br><span class="line">Write errors:           0</span><br><span class="line">Keep-Alive requests:    100000</span><br><span class="line">Total transferred:      13800000 bytes</span><br><span class="line">HTML transferred:       1200000 bytes</span><br><span class="line">Requests per second:    39077.64 [#/sec] (mean)</span><br><span class="line">Time per request:       2.559 [ms] (mean)</span><br><span class="line">Time per request:       0.026 [ms] (mean, across all concurrent requests)</span><br><span class="line">Transfer rate:          5266.32 [Kbytes/sec] received</span><br><span class="line"></span><br><span class="line">Connection Times (ms)</span><br><span class="line">              min  mean[+/-sd] median   max</span><br><span class="line">Connect:        0    0   0.1      0       4</span><br><span class="line">Processing:     0    3   0.6      3       6</span><br><span class="line">Waiting:        0    3   0.6      3       6</span><br><span class="line">Total:          0    3   0.6      3       6</span><br><span class="line"></span><br><span class="line">Percentage of the requests served within a certain time (ms)</span><br><span class="line">  50%      3</span><br><span class="line">  66%      3</span><br><span class="line">  75%      3</span><br><span class="line">  80%      3</span><br><span class="line">  90%      3</span><br><span class="line">  95%      4</span><br><span class="line">  98%      4</span><br><span class="line">  99%      5</span><br><span class="line"> 100%      6 (longest request)</span><br></pre></td></tr></table></figure>
+<p>Go is definitely still a clear winner with half the speed compared to my last benchmark. Next to Go performance is Play framework.</p>
+<p>On a related note, there’s an interesting article for Python developers if you’re thinking about <a href="http://blog.repustate.com/migrating-code-from-python-to-golang-what-you-need-to-know/2013/04/23/" target="_blank" rel="noopener">migrating to Go</a>.</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/http-server-benchmark/">http-server-benchmark</a>, <a href="/categories/http-server-benchmark/scala/">scala</a>, <a href="/categories/http-server-benchmark/scala/play/">play</a>, <a href="/categories/http-server-benchmark/scala/play/scalatra/">scalatra</a>, <a href="/categories/http-server-benchmark/scala/play/scalatra/go/">go</a>, <a href="/categories/http-server-benchmark/scala/play/scalatra/go/ruby/">ruby</a>, <a href="/categories/http-server-benchmark/scala/play/scalatra/go/ruby/python/">python</a>, <a href="/categories/http-server-benchmark/scala/play/scalatra/go/ruby/python/nodejs/">nodejs</a>, <a href="/categories/http-server-benchmark/scala/play/scalatra/go/ruby/python/nodejs/eventmachine/">eventmachine</a>, <a href="/categories/http-server-benchmark/scala/play/scalatra/go/ruby/python/nodejs/eventmachine/twisted/">twisted</a>, <a href="/categories/http-server-benchmark/scala/play/scalatra/go/ruby/python/nodejs/eventmachine/twisted/tornado/">tornado</a>
+    </span>
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+
+<nav class="pagination">
+  
+  
+  <a href="/page/2/" class="pagination-next">Next</a>
+  
+</nav>
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2020 Jesse Armand
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

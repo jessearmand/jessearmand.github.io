@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Revisiting Size Classes | Ruminations | Code better not harder</title>
+
+  
+  <meta name="author" content="Jesse Armand">
+  
+
+  
+  <meta name="description" content="Software Engineer, Developer intrigued by the mobile, web and functional programming.">
+  
+
+  
+  <meta name="keywords" content="ios, size-classes, auto-layout,">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="Revisiting Size Classes"/>
+
+  <meta property="og:site_name" content="Ruminations"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Ruminations" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Ruminations</a>
+    </h1>
+    <p class="site-description">Code better not harder</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/about.html">About</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>Revisiting Size Classes</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2016/05/14/revisiting-size-classes/" rel="bookmark">
+        <time class="entry-date published" datetime="2016-05-13T18:04:29.000Z">
+          2016-05-14
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>Articles on iOS size classes never went beyond the ideal that we have to think in terms of Any, Regular, Compact Horizontal or Vertical size classes for adaptive layout, instead of pixels and devices screen sizes.</p>
+<p>Ever since size classes was introduced in iOS 8, I have always wondered, why do iPhone 4s, 5, and 6 are all under Compact Horizontal and Regular Vertical size classes?</p>
+<p>While in reality they have different dimensions, and during design phase, we have to think about the dimensions of views and their subviews, together with the distances between them due to these varying screen sizes.</p>
+<p>We could of course declare auto layout constraints programmatically with a multiplier based on screen width or height. But, from what I understood size classes are supposed to move us forward from this way of thinking towards designing layout specifically just for the abstractions of them. Until I encountered one article that describes my confusion on size classes:</p>
+<p><a href="http://blog.blackfrog.com/2014/06/27/size-classes-close-but-not-quite/" target="_blank" rel="noopener">Size Classes - Close, but Not Quite</a><br>By Kevin Packard <a href="http://twitter.com/kevinpackard" target="_blank" rel="noopener">@kevinpackard</a> One Storyboard to Rule Them All At WWDC 14, Apple introduced Unified Storyboards and Size<br><a href="http://blog.blackfrog.com" target="_blank" rel="noopener">blog.blackfrog.com</a></p>
+<p><strong>Note</strong> that, the above article was posted about 2 years ago.</p>
+<p>Exactly, if a designer should consider how an iPhone 4s is way shorter than an iPhone 6, resulting in individual layout design for each iPhone 4s, 5, 6, 6 plus. Then, aren’t we still doing what we are doing before size classes were introduced?</p>
+<p>Well, I hope this will change in WWDC 2016.</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/ios-auto-layout/">ios, auto-layout</a>
+    </span>
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2020 Jesse Armand
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>
